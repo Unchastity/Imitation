@@ -45,8 +45,9 @@
 		010F78F01DF00DDF0001793B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F78EF1DF00DDF0001793B /* libstdc++.6.0.9.tbd */; };
 		010F78F41DF00FA40001793B /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010F78F31DF00FA40001793B /* citydict.plist */; };
 		010F78F71DF017300001793B /* CityFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F78F61DF017300001793B /* CityFrameModel.m */; };
-		010F78FA1DF105890001793B /* MGSingleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F78F91DF105890001793B /* MGSingleCellView.m */; };
+		010F78FA1DF105890001793B /* MGInitialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F78F91DF105890001793B /* MGInitialCell.m */; };
 		010F79001DF110080001793B /* MGCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F78FF1DF110080001793B /* MGCityCell.m */; };
+		010F79041DF529AD0001793B /* MGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79031DF529AD0001793B /* MGSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,10 +128,12 @@
 		010F78F31DF00FA40001793B /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citydict.plist; sourceTree = "<group>"; };
 		010F78F51DF017300001793B /* CityFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityFrameModel.h; path = Session/Home/Model/CityFrameModel.h; sourceTree = "<group>"; };
 		010F78F61DF017300001793B /* CityFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityFrameModel.m; path = Session/Home/Model/CityFrameModel.m; sourceTree = "<group>"; };
-		010F78F81DF105890001793B /* MGSingleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSingleCellView.h; path = Session/Home/View/MGSingleCellView.h; sourceTree = "<group>"; };
-		010F78F91DF105890001793B /* MGSingleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSingleCellView.m; path = Session/Home/View/MGSingleCellView.m; sourceTree = "<group>"; };
+		010F78F81DF105890001793B /* MGInitialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGInitialCell.h; path = Session/Home/View/MGInitialCell.h; sourceTree = "<group>"; };
+		010F78F91DF105890001793B /* MGInitialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGInitialCell.m; path = Session/Home/View/MGInitialCell.m; sourceTree = "<group>"; };
 		010F78FE1DF110080001793B /* MGCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGCityCell.h; path = Session/Home/View/MGCityCell.h; sourceTree = "<group>"; };
 		010F78FF1DF110080001793B /* MGCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGCityCell.m; path = Session/Home/View/MGCityCell.m; sourceTree = "<group>"; };
+		010F79021DF529AD0001793B /* MGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGSearchViewController.h; path = Session/Home/ViewController/MGSearchViewController.h; sourceTree = "<group>"; };
+		010F79031DF529AD0001793B /* MGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGSearchViewController.m; path = Session/Home/ViewController/MGSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +370,8 @@
 				010F78601DED753D0001793B /* ViewController.m */,
 				010F78B71DEE6BB70001793B /* SelectCityViewController.h */,
 				010F78B81DEE6BB70001793B /* SelectCityViewController.m */,
+				010F79021DF529AD0001793B /* MGSearchViewController.h */,
+				010F79031DF529AD0001793B /* MGSearchViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -394,8 +399,8 @@
 		010F79011DF11EA70001793B /* selectCity */ = {
 			isa = PBXGroup;
 			children = (
-				010F78F81DF105890001793B /* MGSingleCellView.h */,
-				010F78F91DF105890001793B /* MGSingleCellView.m */,
+				010F78F81DF105890001793B /* MGInitialCell.h */,
+				010F78F91DF105890001793B /* MGInitialCell.m */,
 				010F78FE1DF110080001793B /* MGCityCell.h */,
 				010F78FF1DF110080001793B /* MGCityCell.m */,
 			);
@@ -550,13 +555,14 @@
 				010F78A21DED7F450001793B /* ServiceViewController.m in Sources */,
 				010F78611DED753D0001793B /* ViewController.m in Sources */,
 				010F785E1DED753D0001793B /* AppDelegate.mm in Sources */,
-				010F78FA1DF105890001793B /* MGSingleCellView.m in Sources */,
+				010F78FA1DF105890001793B /* MGInitialCell.m in Sources */,
 				010F78B91DEE6BB70001793B /* SelectCityViewController.m in Sources */,
 				010F78B51DEDD6170001793B /* UIImage+Color.m in Sources */,
 				010F78D11DEEBC460001793B /* HotProductionHeader.m in Sources */,
 				010F78BE1DEE7CE90001793B /* MGScrollImageView.m in Sources */,
 				010F78911DED76D00001793B /* MGTabBarViewController.m in Sources */,
 				010F78D41DEECBCA0001793B /* HotProductionView.m in Sources */,
+				010F79041DF529AD0001793B /* MGSearchViewController.m in Sources */,
 				010F785B1DED753D0001793B /* main.m in Sources */,
 				010F78C71DEE9E610001793B /* MGWeatherView.m in Sources */,
 			);

@@ -23,6 +23,6 @@
 
 //-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
-+(instancetype)cellWithTableView:(UITableView *)tableView withCityFrameModel:(CityFrameModel *)cityFrameModel;
++(instancetype)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexpath withCityFrameModel:(CityFrameModel *)cityFrameModel;
 
 @end

@@ -27,6 +27,7 @@
     //set default selected view controller
     self.selectedViewController = self.viewControllers[0];
     
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 -(void)addCustomChildViewController

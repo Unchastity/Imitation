@@ -26,11 +26,12 @@
 
     // Configure the view for the selected state
 }
-
-+(instancetype)cellWithTableView:(UITableView *)tableView withCityFrameModel:(CityFrameModel *)cityFrameModel
+//由于每个cell都不同,这里不重用
++(instancetype)cellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexpath withCityFrameModel:(CityFrameModel *)cityFrameModel
 {
     static NSString *cityCellIdentifier = @"cityCellIdentifier";
-    MGCityCell *cell = [tableView dequeueReusableCellWithIdentifier:cityCellIdentifier];
+    //MGCityCell *cell = [tableView dequeueReusableCellWithIdentifier:cityCellIdentifier];
+    MGCityCell *cell = [tableView cellForRowAtIndexPath: indexpath];
     if (!cell) {
         //这里的方法只调用有限次，初始化格式，会改变的内容不应该在这里
         cell = [[MGCityCell alloc] initReuseIdentifier:cityCellIdentifier withModel: cityFrameModel];

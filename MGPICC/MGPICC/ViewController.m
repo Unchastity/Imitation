@@ -20,7 +20,10 @@
 
 #import "MenuModel.h"
 
-@interface ViewController ()<MGScrollImageViewDelegate, HotProductionHeaderDelegate, MGHomeMenuViewDelegate, HotProductionViewDelegate>
+@interface ViewController ()<MGScrollImageViewDelegate, HotProductionHeaderDelegate, MGHomeMenuViewDelegate, HotProductionViewDelegate, SelectCityViewControllerDelegate>
+{
+    UIButton *_locationBtn;
+}
 
 @property(nonatomic, strong) UIScrollView *contentScrollView;
 
@@ -31,6 +34,7 @@
 @property(nonatomic, strong) NSArray *homeMenuArr;
 
 @property(nonatomic, strong) NSArray *hotArr;
+
 @end
 
 @implementation ViewController
@@ -76,6 +80,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //NSLog(@"viewDidLoad");
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     //设置navigationBar的背景色
@@ -84,11 +89,15 @@
     [self settingNaviItem];
     
     [self settingContentScrollView];
+    
 
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
+    [_locationBtn setTitle:self.loccation forState:UIControlStateNormal];
 }
 
 -(void)settingNavigationBarBackgroundColor
@@ -120,6 +129,7 @@
     leftBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [leftBtn addTarget:self action:@selector(pushToSelectCityContoller) forControlEvents:UIControlEventTouchUpInside];
     leftBtn.adjustsImageWhenHighlighted = NO;
+    _locationBtn = leftBtn;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     
     //self.navigationItem.titleView
@@ -132,8 +142,11 @@
 
 -(void)pushToSelectCityContoller
 {
+    self.hidesBottomBarWhenPushed = YES;
     SelectCityViewController *selectCityVC = [[SelectCityViewController alloc] init];
+    selectCityVC.delegate = self;
     [self.navigationController pushViewController:selectCityVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 -(void)settingContentScrollView
@@ -207,8 +220,6 @@
     [self.contentScrollView addSubview: hotView];
 }
 
-
-
 #pragma mark - MGScrollImageViewDelegate
 -(void)clickScrollImageWithTag:(long)tag {
     
@@ -239,6 +250,13 @@
 -(void)clickHotProductionViewWithTag:(long)tag
 {
     
+}
+
+#pragma mark - SelectCityViewControllerDelegate
+-(void)changeLocation:(NSString *)cityName
+{
+    self.loccation = cityName;
+    NSLog(@"changed location: %@", self.loccation);
 }
 
 @end
