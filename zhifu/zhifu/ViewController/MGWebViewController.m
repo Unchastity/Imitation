@@ -76,6 +76,7 @@
 //    [self.webView loadHTMLString:htmlString baseURL: [NSURL URLWithString: webUrl]];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: webUrl]]];
+    
     _networkActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _networkActivity.frame = CGRectMake(0, 0, 20, 20);
     _networkActivity.center = self.view.center;

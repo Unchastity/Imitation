@@ -32,6 +32,7 @@
 		012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */; };
 		012557351DF84B7100B41771 /* LoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557331DF84B7100B41771 /* LoanInforCell.m */; };
 		012557361DF84B7100B41771 /* LoanInforCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012557341DF84B7100B41771 /* LoanInforCell.xib */; };
+		012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557411DF92F1B00B41771 /* MGRegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		012557321DF84B7100B41771 /* LoanInforCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoanInforCell.h; path = View/Cell/LoanInforCell.h; sourceTree = "<group>"; };
 		012557331DF84B7100B41771 /* LoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoanInforCell.m; path = View/Cell/LoanInforCell.m; sourceTree = "<group>"; };
 		012557341DF84B7100B41771 /* LoanInforCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoanInforCell.xib; path = View/Cell/LoanInforCell.xib; sourceTree = "<group>"; };
+		012557401DF92F1B00B41771 /* MGRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGRegisterViewController.h; path = ViewController/MGRegisterViewController.h; sourceTree = "<group>"; };
+		012557411DF92F1B00B41771 /* MGRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGRegisterViewController.m; path = ViewController/MGRegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,8 +206,6 @@
 				0125573A1DF92B8600B41771 /* More */,
 				010F79661DF70E180001793B /* MGBaseViewController.h */,
 				010F79671DF70E180001793B /* MGBaseViewController.m */,
-				010F796E1DF7C81D0001793B /* MGWebViewController.h */,
-				010F796F1DF7C81D0001793B /* MGWebViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -274,6 +275,10 @@
 			children = (
 				010F79171DF564460001793B /* HomeViewController.h */,
 				010F79181DF564460001793B /* HomeViewController.m */,
+				010F796E1DF7C81D0001793B /* MGWebViewController.h */,
+				010F796F1DF7C81D0001793B /* MGWebViewController.m */,
+				012557401DF92F1B00B41771 /* MGRegisterViewController.h */,
+				012557411DF92F1B00B41771 /* MGRegisterViewController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				012557351DF84B7100B41771 /* LoanInforCell.m in Sources */,
 				010F79681DF70E180001793B /* MGBaseViewController.m in Sources */,
 				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
+				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,
 				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
 				010F79651DF6FB840001793B /* MGUserLoanModel.m in Sources */,
 				010F79591DF69D720001793B /* MGKeyChain.m in Sources */,

@@ -15,11 +15,15 @@
 
 #import "MGBannerScrollView.h"
 #import "MGWebViewController.h"
+#import "MGRegisterViewController.h"
+
 #import "UserInfoCell.h"
 #import "LoanInforCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, MGBannerScrollViewDelegate, UserInfoCellDelegate>
-
+{
+    UIActivityIndicatorView *_networkActivityView;
+}
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 
 @property (nonatomic, strong) MGDataResultModel *dataResultModel;
@@ -73,8 +77,30 @@
     _userLoansArr = [NSMutableArray new];
 }
 
+-(void)initTableView {
+    
+    _networkActivityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleGray];
+    _networkActivityView.frame = CGRectMake( 0, 0, 30, 30);
+    _networkActivityView.center = self.view.center;
+    _networkActivityView.hidesWhenStopped = YES;
+    [self.view addSubview: _networkActivityView];
+    [self.view bringSubviewToFront: _networkActivityView];
+    
+    CGRect tableViewFrame = CGRectMake(0, NavigationBarY, SCREEN_WIDTH, SCREEN_HEIGHT);
+    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    
+    self.homeTableView = tableView;
+    [self.view addSubview: tableView];
+    
+}
+
 -(void)sendRequest
 {
+    [_networkActivityView startAnimating];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
+    
     NSString *urlStr = @"http://service.zhifubank.com/";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlStr]];
     [request setHTTPMethod: @"POST"];
@@ -114,6 +140,9 @@
                 [self.userLoansArr addObject: userLoanModel];
             }
             
+            [_networkActivityView stopAnimating];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+            
             [self.homeTableView reloadData];
         }else
         {
@@ -123,17 +152,6 @@
     [task resume];
 }
 
--(void)initTableView {
-    
-    CGRect tableViewFrame = CGRectMake(0, NavigationBarY, SCREEN_WIDTH, SCREEN_HEIGHT);
-    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    
-    self.homeTableView = tableView;
-    [self.view addSubview: tableView];
-    
-}
 
 #pragma mark - MGBannerScrollViewDelegate
 -(void)clickBannerWithBannerModel:(MGBannersModel *)bannerModel
@@ -258,6 +276,8 @@
 -(void)clickRegisterNowBtn
 {
     NSLog(@"clickRegisterNowBtn");
+    MGRegisterViewController *registerVC = [MGRegisterViewController registerViewControllerFromStoryboard];
+    [self.navigationController pushViewController: registerVC animated:YES];
 }
 
 @end
