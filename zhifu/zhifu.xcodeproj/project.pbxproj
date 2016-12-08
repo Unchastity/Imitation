@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010F79131DF564460001793B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79121DF564460001793B /* main.m */; };
+		010F79161DF564460001793B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79151DF564460001793B /* AppDelegate.m */; };
+		010F79191DF564460001793B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79181DF564460001793B /* HomeViewController.m */; };
+		010F791C1DF564460001793B /* InvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F791B1DF564460001793B /* InvestViewController.m */; };
+		010F791F1DF564460001793B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010F791D1DF564460001793B /* Main.storyboard */; };
+		010F79211DF564460001793B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010F79201DF564460001793B /* Assets.xcassets */; };
+		010F79241DF564460001793B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 010F79221DF564460001793B /* LaunchScreen.storyboard */; };
+		010F792F1DF564460001793B /* zhifuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F792E1DF564460001793B /* zhifuTests.m */; };
+		010F793A1DF564460001793B /* zhifuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79391DF564460001793B /* zhifuUITests.m */; };
+		010F79491DF5B8050001793B /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79481DF5B8050001793B /* UserViewController.m */; };
+		010F794C1DF5B8110001793B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F794B1DF5B8110001793B /* MoreViewController.m */; };
+		010F79561DF69C0A0001793B /* GetUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79551DF69C0A0001793B /* GetUUID.m */; };
+		010F79591DF69D720001793B /* MGKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79581DF69D720001793B /* MGKeyChain.m */; };
+		010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F795B1DF6BBBF0001793B /* MGDataResultModel.m */; };
+		010F795F1DF6C37C0001793B /* MGBannersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F795E1DF6C37C0001793B /* MGBannersModel.m */; };
+		010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79611DF6F89A0001793B /* MGLoanModel.m */; };
+		010F79651DF6FB840001793B /* MGUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79641DF6FB840001793B /* MGUserLoanModel.m */; };
+		010F79681DF70E180001793B /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79671DF70E180001793B /* MGBaseViewController.m */; };
+		010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F796C1DF70FA80001793B /* MGBannerScrollView.m */; };
+		010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F796F1DF7C81D0001793B /* MGWebViewController.m */; };
+		0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125572B1DF7FC9600B41771 /* UserInfoCell.m */; };
+		0125572E1DF7FC9600B41771 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125572C1DF7FC9600B41771 /* UserInfoCell.xib */; };
+		012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */; };
+		012557351DF84B7100B41771 /* LoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557331DF84B7100B41771 /* LoanInforCell.m */; };
+		012557361DF84B7100B41771 /* LoanInforCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012557341DF84B7100B41771 /* LoanInforCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		010F792B1DF564460001793B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010F79061DF564460001793B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010F790D1DF564460001793B;
+			remoteInfo = zhifu;
+		};
+		010F79361DF564460001793B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010F79061DF564460001793B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010F790D1DF564460001793B;
+			remoteInfo = zhifu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010F790E1DF564460001793B /* zhifu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhifu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		010F79121DF564460001793B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		010F79141DF564460001793B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		010F79151DF564460001793B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		010F79171DF564460001793B /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		010F79181DF564460001793B /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		010F791A1DF564460001793B /* InvestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvestViewController.h; sourceTree = "<group>"; };
+		010F791B1DF564460001793B /* InvestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvestViewController.m; sourceTree = "<group>"; };
+		010F791E1DF564460001793B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		010F79201DF564460001793B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		010F79231DF564460001793B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		010F79251DF564460001793B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		010F792A1DF564460001793B /* zhifuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zhifuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		010F792E1DF564460001793B /* zhifuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zhifuTests.m; sourceTree = "<group>"; };
+		010F79301DF564460001793B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		010F79351DF564460001793B /* zhifuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zhifuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		010F79391DF564460001793B /* zhifuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zhifuUITests.m; sourceTree = "<group>"; };
+		010F793B1DF564460001793B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		010F79471DF5B8050001793B /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		010F79481DF5B8050001793B /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		010F794A1DF5B8110001793B /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		010F794B1DF5B8110001793B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		010F79521DF6958B0001793B /* MGMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MGMacro.h; path = Tool/MGMacro.h; sourceTree = "<group>"; };
+		010F79531DF69B920001793B /* zhifu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zhifu.entitlements; sourceTree = "<group>"; };
+		010F79541DF69C0A0001793B /* GetUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetUUID.h; path = Tool/GetUUID.h; sourceTree = "<group>"; };
+		010F79551DF69C0A0001793B /* GetUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetUUID.m; path = Tool/GetUUID.m; sourceTree = "<group>"; };
+		010F79571DF69D720001793B /* MGKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGKeyChain.h; path = Tool/MGKeyChain.h; sourceTree = "<group>"; };
+		010F79581DF69D720001793B /* MGKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGKeyChain.m; path = Tool/MGKeyChain.m; sourceTree = "<group>"; };
+		010F795A1DF6BBBF0001793B /* MGDataResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGDataResultModel.h; path = Model/MGDataResultModel.h; sourceTree = "<group>"; };
+		010F795B1DF6BBBF0001793B /* MGDataResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGDataResultModel.m; path = Model/MGDataResultModel.m; sourceTree = "<group>"; };
+		010F795D1DF6C37C0001793B /* MGBannersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBannersModel.h; path = Model/MGBannersModel.h; sourceTree = "<group>"; };
+		010F795E1DF6C37C0001793B /* MGBannersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBannersModel.m; path = Model/MGBannersModel.m; sourceTree = "<group>"; };
+		010F79601DF6F8990001793B /* MGLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLoanModel.h; path = Model/MGLoanModel.h; sourceTree = "<group>"; };
+		010F79611DF6F89A0001793B /* MGLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGLoanModel.m; path = Model/MGLoanModel.m; sourceTree = "<group>"; };
+		010F79631DF6FB840001793B /* MGUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGUserLoanModel.h; path = Model/MGUserLoanModel.h; sourceTree = "<group>"; };
+		010F79641DF6FB840001793B /* MGUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGUserLoanModel.m; path = Model/MGUserLoanModel.m; sourceTree = "<group>"; };
+		010F79661DF70E180001793B /* MGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBaseViewController.h; path = ViewController/MGBaseViewController.h; sourceTree = "<group>"; };
+		010F79671DF70E180001793B /* MGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBaseViewController.m; path = ViewController/MGBaseViewController.m; sourceTree = "<group>"; };
+		010F796B1DF70FA80001793B /* MGBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBannerScrollView.h; path = View/CustomView/MGBannerScrollView.h; sourceTree = "<group>"; };
+		010F796C1DF70FA80001793B /* MGBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBannerScrollView.m; path = View/CustomView/MGBannerScrollView.m; sourceTree = "<group>"; };
+		010F796E1DF7C81D0001793B /* MGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGWebViewController.h; path = ViewController/MGWebViewController.h; sourceTree = "<group>"; };
+		010F796F1DF7C81D0001793B /* MGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGWebViewController.m; path = ViewController/MGWebViewController.m; sourceTree = "<group>"; };
+		0125572A1DF7FC9600B41771 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoCell.h; path = View/Cell/UserInfoCell.h; sourceTree = "<group>"; };
+		0125572B1DF7FC9600B41771 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoCell.m; path = View/Cell/UserInfoCell.m; sourceTree = "<group>"; };
+		0125572C1DF7FC9600B41771 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoCell.xib; path = View/Cell/UserInfoCell.xib; sourceTree = "<group>"; };
+		0125572F1DF80AD300B41771 /* NSString+CountNumChangeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CountNumChangeFormat.h"; path = "Tool/NSString+CountNumChangeFormat.h"; sourceTree = "<group>"; };
+		012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CountNumChangeFormat.m"; path = "Tool/NSString+CountNumChangeFormat.m"; sourceTree = "<group>"; };
+		012557321DF84B7100B41771 /* LoanInforCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoanInforCell.h; path = View/Cell/LoanInforCell.h; sourceTree = "<group>"; };
+		012557331DF84B7100B41771 /* LoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoanInforCell.m; path = View/Cell/LoanInforCell.m; sourceTree = "<group>"; };
+		012557341DF84B7100B41771 /* LoanInforCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoanInforCell.xib; path = View/Cell/LoanInforCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		010F790B1DF564460001793B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79271DF564460001793B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79321DF564460001793B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		010F79051DF564460001793B = {
+			isa = PBXGroup;
+			children = (
+				010F79101DF564460001793B /* zhifu */,
+				010F792D1DF564460001793B /* zhifuTests */,
+				010F79381DF564460001793B /* zhifuUITests */,
+				010F790F1DF564460001793B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		010F790F1DF564460001793B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				010F790E1DF564460001793B /* zhifu.app */,
+				010F792A1DF564460001793B /* zhifuTests.xctest */,
+				010F79351DF564460001793B /* zhifuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		010F79101DF564460001793B /* zhifu */ = {
+			isa = PBXGroup;
+			children = (
+				010F79531DF69B920001793B /* zhifu.entitlements */,
+				010F79511DF690440001793B /* Tool */,
+				010F79501DF68FBE0001793B /* Model */,
+				010F794F1DF68F9B0001793B /* View */,
+				010F794D1DF68F870001793B /* ViewController */,
+				010F791D1DF564460001793B /* Main.storyboard */,
+				010F79201DF564460001793B /* Assets.xcassets */,
+				010F79221DF564460001793B /* LaunchScreen.storyboard */,
+				010F79251DF564460001793B /* Info.plist */,
+				010F79111DF564460001793B /* Supporting Files */,
+			);
+			path = zhifu;
+			sourceTree = "<group>";
+		};
+		010F79111DF564460001793B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				010F79141DF564460001793B /* AppDelegate.h */,
+				010F79151DF564460001793B /* AppDelegate.m */,
+				010F79121DF564460001793B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		010F792D1DF564460001793B /* zhifuTests */ = {
+			isa = PBXGroup;
+			children = (
+				010F792E1DF564460001793B /* zhifuTests.m */,
+				010F79301DF564460001793B /* Info.plist */,
+			);
+			path = zhifuTests;
+			sourceTree = "<group>";
+		};
+		010F79381DF564460001793B /* zhifuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				010F79391DF564460001793B /* zhifuUITests.m */,
+				010F793B1DF564460001793B /* Info.plist */,
+			);
+			path = zhifuUITests;
+			sourceTree = "<group>";
+		};
+		010F794D1DF68F870001793B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				010F79171DF564460001793B /* HomeViewController.h */,
+				010F79181DF564460001793B /* HomeViewController.m */,
+				010F791A1DF564460001793B /* InvestViewController.h */,
+				010F791B1DF564460001793B /* InvestViewController.m */,
+				010F79471DF5B8050001793B /* UserViewController.h */,
+				010F79481DF5B8050001793B /* UserViewController.m */,
+				010F794A1DF5B8110001793B /* MoreViewController.h */,
+				010F794B1DF5B8110001793B /* MoreViewController.m */,
+				010F79661DF70E180001793B /* MGBaseViewController.h */,
+				010F79671DF70E180001793B /* MGBaseViewController.m */,
+				010F796E1DF7C81D0001793B /* MGWebViewController.h */,
+				010F796F1DF7C81D0001793B /* MGWebViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		010F794F1DF68F9B0001793B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				010F796A1DF70F810001793B /* CustomView */,
+				010F79691DF70F7A0001793B /* Cell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		010F79501DF68FBE0001793B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				010F795A1DF6BBBF0001793B /* MGDataResultModel.h */,
+				010F795B1DF6BBBF0001793B /* MGDataResultModel.m */,
+				010F795D1DF6C37C0001793B /* MGBannersModel.h */,
+				010F795E1DF6C37C0001793B /* MGBannersModel.m */,
+				010F79601DF6F8990001793B /* MGLoanModel.h */,
+				010F79611DF6F89A0001793B /* MGLoanModel.m */,
+				010F79631DF6FB840001793B /* MGUserLoanModel.h */,
+				010F79641DF6FB840001793B /* MGUserLoanModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		010F79511DF690440001793B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				010F79521DF6958B0001793B /* MGMacro.h */,
+				010F79571DF69D720001793B /* MGKeyChain.h */,
+				010F79581DF69D720001793B /* MGKeyChain.m */,
+				010F79541DF69C0A0001793B /* GetUUID.h */,
+				010F79551DF69C0A0001793B /* GetUUID.m */,
+				0125572F1DF80AD300B41771 /* NSString+CountNumChangeFormat.h */,
+				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		010F79691DF70F7A0001793B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0125572A1DF7FC9600B41771 /* UserInfoCell.h */,
+				0125572B1DF7FC9600B41771 /* UserInfoCell.m */,
+				0125572C1DF7FC9600B41771 /* UserInfoCell.xib */,
+				012557321DF84B7100B41771 /* LoanInforCell.h */,
+				012557331DF84B7100B41771 /* LoanInforCell.m */,
+				012557341DF84B7100B41771 /* LoanInforCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		010F796A1DF70F810001793B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				010F796B1DF70FA80001793B /* MGBannerScrollView.h */,
+				010F796C1DF70FA80001793B /* MGBannerScrollView.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		010F790D1DF564460001793B /* zhifu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010F793E1DF564460001793B /* Build configuration list for PBXNativeTarget "zhifu" */;
+			buildPhases = (
+				010F790A1DF564460001793B /* Sources */,
+				010F790B1DF564460001793B /* Frameworks */,
+				010F790C1DF564460001793B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = zhifu;
+			productName = zhifu;
+			productReference = 010F790E1DF564460001793B /* zhifu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		010F79291DF564460001793B /* zhifuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010F79411DF564460001793B /* Build configuration list for PBXNativeTarget "zhifuTests" */;
+			buildPhases = (
+				010F79261DF564460001793B /* Sources */,
+				010F79271DF564460001793B /* Frameworks */,
+				010F79281DF564460001793B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				010F792C1DF564460001793B /* PBXTargetDependency */,
+			);
+			name = zhifuTests;
+			productName = zhifuTests;
+			productReference = 010F792A1DF564460001793B /* zhifuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		010F79341DF564460001793B /* zhifuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 010F79441DF564460001793B /* Build configuration list for PBXNativeTarget "zhifuUITests" */;
+			buildPhases = (
+				010F79311DF564460001793B /* Sources */,
+				010F79321DF564460001793B /* Frameworks */,
+				010F79331DF564460001793B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				010F79371DF564460001793B /* PBXTargetDependency */,
+			);
+			name = zhifuUITests;
+			productName = zhifuUITests;
+			productReference = 010F79351DF564460001793B /* zhifuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		010F79061DF564460001793B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Unchastity;
+				TargetAttributes = {
+					010F790D1DF564460001793B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = W98U5GWCGM;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					010F79291DF564460001793B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = W98U5GWCGM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 010F790D1DF564460001793B;
+					};
+					010F79341DF564460001793B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = W98U5GWCGM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 010F790D1DF564460001793B;
+					};
+				};
+			};
+			buildConfigurationList = 010F79091DF564460001793B /* Build configuration list for PBXProject "zhifu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 010F79051DF564460001793B;
+			productRefGroup = 010F790F1DF564460001793B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				010F790D1DF564460001793B /* zhifu */,
+				010F79291DF564460001793B /* zhifuTests */,
+				010F79341DF564460001793B /* zhifuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		010F790C1DF564460001793B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012557361DF84B7100B41771 /* LoanInforCell.xib in Resources */,
+				0125572E1DF7FC9600B41771 /* UserInfoCell.xib in Resources */,
+				010F79241DF564460001793B /* LaunchScreen.storyboard in Resources */,
+				010F79211DF564460001793B /* Assets.xcassets in Resources */,
+				010F791F1DF564460001793B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79281DF564460001793B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79331DF564460001793B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		010F790A1DF564460001793B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010F791C1DF564460001793B /* InvestViewController.m in Sources */,
+				010F794C1DF5B8110001793B /* MoreViewController.m in Sources */,
+				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
+				010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */,
+				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
+				010F795F1DF6C37C0001793B /* MGBannersModel.m in Sources */,
+				010F79161DF564460001793B /* AppDelegate.m in Sources */,
+				010F79191DF564460001793B /* HomeViewController.m in Sources */,
+				010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */,
+				010F79561DF69C0A0001793B /* GetUUID.m in Sources */,
+				010F79131DF564460001793B /* main.m in Sources */,
+				010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */,
+				012557351DF84B7100B41771 /* LoanInforCell.m in Sources */,
+				010F79681DF70E180001793B /* MGBaseViewController.m in Sources */,
+				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
+				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
+				010F79651DF6FB840001793B /* MGUserLoanModel.m in Sources */,
+				010F79591DF69D720001793B /* MGKeyChain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79261DF564460001793B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010F792F1DF564460001793B /* zhifuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		010F79311DF564460001793B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010F793A1DF564460001793B /* zhifuUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		010F792C1DF564460001793B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 010F790D1DF564460001793B /* zhifu */;
+			targetProxy = 010F792B1DF564460001793B /* PBXContainerItemProxy */;
+		};
+		010F79371DF564460001793B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 010F790D1DF564460001793B /* zhifu */;
+			targetProxy = 010F79361DF564460001793B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		010F791D1DF564460001793B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				010F791E1DF564460001793B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		010F79221DF564460001793B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				010F79231DF564460001793B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		010F793C1DF564460001793B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		010F793D1DF564460001793B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		010F793F1DF564460001793B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = zhifu/zhifu.entitlements;
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		010F79401DF564460001793B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = zhifu/zhifu.entitlements;
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		010F79421DF564460001793B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zhifu.app/zhifu";
+			};
+			name = Debug;
+		};
+		010F79431DF564460001793B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zhifu.app/zhifu";
+			};
+			name = Release;
+		};
+		010F79451DF564460001793B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = zhifu;
+			};
+			name = Debug;
+		};
+		010F79461DF564460001793B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W98U5GWCGM;
+				INFOPLIST_FILE = zhifuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = JMG.zhifuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = zhifu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		010F79091DF564460001793B /* Build configuration list for PBXProject "zhifu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010F793C1DF564460001793B /* Debug */,
+				010F793D1DF564460001793B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010F793E1DF564460001793B /* Build configuration list for PBXNativeTarget "zhifu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010F793F1DF564460001793B /* Debug */,
+				010F79401DF564460001793B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010F79411DF564460001793B /* Build configuration list for PBXNativeTarget "zhifuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010F79421DF564460001793B /* Debug */,
+				010F79431DF564460001793B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		010F79441DF564460001793B /* Build configuration list for PBXNativeTarget "zhifuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				010F79451DF564460001793B /* Debug */,
+				010F79461DF564460001793B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 010F79061DF564460001793B /* Project object */;
+}
