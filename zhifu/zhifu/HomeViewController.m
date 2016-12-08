@@ -16,6 +16,7 @@
 #import "MGBannerScrollView.h"
 #import "MGWebViewController.h"
 #import "UserInfoCell.h"
+#import "LoanInforCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, MGBannerScrollViewDelegate, UserInfoCellDelegate>
 
@@ -146,12 +147,27 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0)
+    {
+        return 1;
+    }else if (section == 1)
+    {
+        if (self.dataResultModel.newloan == nil)
+        {
+            return self.goingLoansArr.count;
+        }else
+        {
+            return 1 + self.goingLoansArr.count;
+        }
+    }else
+    {
+        return self.userLoansArr.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -162,14 +178,50 @@
         UserInfoCell *cell = [UserInfoCell cellForTableView:tableView withTotalLend: totalLend];
         cell.delegate = self;
         return cell;
+    }else if (indexPath.section == 1)
+    {
+        static NSString *loanCellID = @"loanCellID";
+        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
+        if (self.dataResultModel.newloan != nil && indexPath.row == 0) {
+            cell.loanModel = self.loanNewModel;
+        }else
+        {
+            cell.loanModel = self.goingLoansArr[indexPath.row - 1];
+        }
+        return cell;
     }else
     {
-        return nil;
+        static NSString *userLoanCellID = @"userLoanCellID";
+        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
+        cell.userLoanModel = self.userLoansArr[indexPath.row];
+        return cell;
+    }
+}
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 1)
+    {
+        return @"投资列表";
+    }else if (section == 2)
+    {
+        return @"债权列表";
+    }else{
+        return nil;
     }
 }
 
 #pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section ==1)
+    {
+        NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
+    }else if (indexPath.section == 2)
+    {
+        NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
+    }
+}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -189,12 +241,17 @@
     if (indexPath.section == 0) {
         return 50;
     }
-    return 70;
+    return 101;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return SCREEN_WIDTH * 7 / 15;;
+    if (section == 0) {
+        return SCREEN_WIDTH * 7 / 15;;
+    }else
+    {
+        return 15.0;
+    }
 }
 
 #pragma mark - UserInfoCellDelegate

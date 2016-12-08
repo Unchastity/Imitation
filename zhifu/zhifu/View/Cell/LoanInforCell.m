@@ -109,7 +109,7 @@
 
 -(void)setLoanModel:(MGLoanModel *)loanModel
 {
-    self.loanModel = loanModel;
+    _loanModel = loanModel;
     
     //投资
     [self.loadMoneyKeyLabel     setText: @"借款金额"];
@@ -123,13 +123,14 @@
         self.bondImageView.hidden = NO;
         [self.bondImageView setImage: [UIImage imageNamed: @"bond_newrate_item_icon"]];
     }
-    //是否完成
-    if (loanModel.status) {
-        self.completeImageView.hidden = NO;
-        [self.completeImageView setImage: [UIImage imageNamed: @"icon_t_complete"]];
-    }
+//    //是否完成
+//    if (loanModel.status) {
+//        self.completeImageView.hidden = NO;
+//        [self.completeImageView setImage: [UIImage imageNamed: @"icon_t_complete"]];
+//    }
     //借款金额
-    [self.loadModnyLabel setText: loanModel.loanmoney];
+    NSString *money = [NSString stringWithFormat:@"%@元", loanModel.loanmoney];
+    [self.loadModnyLabel setText: money];
     //借款期限
     [self.msgLabel setText: loanModel.msg];
     //回款方式
@@ -155,6 +156,9 @@
     //
     if (ratioProgress == 1.0) {
         [self.statusLabel setText: @"已完成"];
+        
+        self.completeImageView.hidden = NO;
+        [self.completeImageView setImage: [UIImage imageNamed: @"icon_t_complete"]];
     }else
     {
         NSString *str = [NSString stringWithFormat:@"%0.1f%%", ratioProgress*100.0];
@@ -164,7 +168,7 @@
 
 -(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel
 {
-    self.userLoanModel = userLoanModel;
+    _userLoanModel = userLoanModel;
     
     //债权
     [self.loadMoneyKeyLabel     setText: @"转让金额"];
@@ -172,6 +176,43 @@
     [self.repaymentKeyLabel     setText: @"受让收益"];
     [self.yearRateKeyLabel      setText: @"预期年化利率"];
     
+    [self.titleLabel setText: userLoanModel.title];
+    //转
+    self.bondImageView.hidden = NO;
+    [self.bondImageView setImage: [UIImage imageNamed: @"bond_attorn_item_icon"]];
+    
+//    //是否完成
+//    if (userLoanModel.status) {
+//        self.completeImageView.hidden = NO;
+//        [self.completeImageView setImage: [UIImage imageNamed: @"icon_t_complete"]];
+//    }
+    
+    //转让金额
+    NSString *money = [NSString stringWithFormat:@"%@元", userLoanModel.loanmoney];
+    [self.loadModnyLabel setText: money];
+    //剩余天数
+    [self.msgLabel setText: userLoanModel.rest_days.stringValue];
+    //受让收益
+    NSString *overflowMoney = [NSString stringWithFormat:@"%@元", userLoanModel.overflow_money];
+    [self.repaymentLabel setText: overflowMoney];
+    //年化率
+    [self.yearRateLabel setText: userLoanModel.yearrate];
+    //进度
+    float ratioProgress = userLoanModel.tendermoney.floatValue / userLoanModel.loanmoney.floatValue;
+    [self.statusProgress setProgress: ratioProgress];
+    
+    //
+    if (ratioProgress == 1.0) {
+        [self.statusLabel setText: @"已完成"];
+        
+        self.completeImageView.hidden = NO;
+        [self.completeImageView setImage: [UIImage imageNamed: @"icon_t_complete"]];
+    }else
+    {
+        NSString *str = [NSString stringWithFormat:@"%0.1f%%", ratioProgress*100.0];
+        [self.statusLabel setText: str];
+    }
+
 
 }
 

@@ -197,14 +197,10 @@
 		010F794D1DF68F870001793B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				010F79171DF564460001793B /* HomeViewController.h */,
-				010F79181DF564460001793B /* HomeViewController.m */,
-				010F791A1DF564460001793B /* InvestViewController.h */,
-				010F791B1DF564460001793B /* InvestViewController.m */,
-				010F79471DF5B8050001793B /* UserViewController.h */,
-				010F79481DF5B8050001793B /* UserViewController.m */,
-				010F794A1DF5B8110001793B /* MoreViewController.h */,
-				010F794B1DF5B8110001793B /* MoreViewController.m */,
+				012557371DF92B6700B41771 /* home */,
+				012557381DF92B6E00B41771 /* invest */,
+				012557391DF92B7D00B41771 /* User */,
+				0125573A1DF92B8600B41771 /* More */,
 				010F79661DF70E180001793B /* MGBaseViewController.h */,
 				010F79671DF70E180001793B /* MGBaseViewController.m */,
 				010F796E1DF7C81D0001793B /* MGWebViewController.h */,
@@ -271,6 +267,42 @@
 				010F796C1DF70FA80001793B /* MGBannerScrollView.m */,
 			);
 			name = CustomView;
+			sourceTree = "<group>";
+		};
+		012557371DF92B6700B41771 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				010F79171DF564460001793B /* HomeViewController.h */,
+				010F79181DF564460001793B /* HomeViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		012557381DF92B6E00B41771 /* invest */ = {
+			isa = PBXGroup;
+			children = (
+				010F791A1DF564460001793B /* InvestViewController.h */,
+				010F791B1DF564460001793B /* InvestViewController.m */,
+			);
+			name = invest;
+			sourceTree = "<group>";
+		};
+		012557391DF92B7D00B41771 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				010F79471DF5B8050001793B /* UserViewController.h */,
+				010F79481DF5B8050001793B /* UserViewController.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		0125573A1DF92B8600B41771 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				010F794A1DF5B8110001793B /* MoreViewController.h */,
+				010F794B1DF5B8110001793B /* MoreViewController.m */,
+			);
+			name = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
