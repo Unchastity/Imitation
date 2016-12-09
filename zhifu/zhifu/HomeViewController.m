@@ -6,6 +6,17 @@
 //  Copyright © 2016 Unchastity. All rights reserved.
 //
 
+/*
+ 
+ 1.每次下拉刷新内存都会增加
+    1.1 可能是reload时，cell没有重用
+        我的cell时nib文件，cell的identifier没有设置，导致没有重用
+    1.1->通过修改nib文件cell的identifier，调试发现cell以重用，担内存仍然在增加，不过增加量下降，可能是tableView的headView
+    1.2 测试发现，bannerView每次消失在出现时，都会再次重建，并增加内存，增加量前后一致
+    1.2->实现bannerView的优化
+            MGBannerScrollView 继承 UITableViewHeaderFooterView
+ */
+
 #import "HomeViewController.h"
 #import "MGMacro.h"
 #import "CreateBarBtnItem.h"
@@ -36,7 +47,7 @@
 /**
  标语
  */
-@property (nonatomic, strong) NSMutableArray *bannersArr;
+@property (nonatomic, strong) NSArray *bannersArr;
 
 
 /**
@@ -47,12 +58,12 @@
 /**
  投资列表
  */
-@property (nonatomic, strong) NSMutableArray *goingLoansArr;
+@property (nonatomic, strong) NSArray *goingLoansArr;
 
 /**
  债券列表
  */
-@property (nonatomic, strong) NSMutableArray *userLoansArr;
+@property (nonatomic, strong) NSArray *userLoansArr;
 
 @end
 
@@ -158,22 +169,32 @@
             NSDictionary *dataResultDict = dict[@"dataresult"];
             MGDataResultModel *dataResultModel = [MGDataResultModel modelWithDict: dataResultDict];
             self.dataResultModel = dataResultModel;
-            
-            for (NSDictionary *bannerDict in self.dataResultModel.banners) {
-                MGBannersModel *bannerModel = [MGBannersModel modelWithDict: bannerDict];
-                [self.bannersArr addObject: bannerModel];
+            {
+                NSMutableArray *tmpBannersArr = [NSMutableArray new];
+                for (NSDictionary *bannerDict in self.dataResultModel.banners) {
+                    MGBannersModel *bannerModel = [MGBannersModel modelWithDict: bannerDict];
+                    [tmpBannersArr addObject: bannerModel];
+                }
+                self.bannersArr = [NSArray arrayWithArray: tmpBannersArr];
             }
             //新手加息
             self.loanNewModel = [MGLoanModel modelWithDict: self.dataResultModel.newloan];
             
-            for (NSDictionary *dict in self.dataResultModel.going_loan) {
-                MGLoanModel *loanModel = [MGLoanModel modelWithDict: dict];
-                [self.goingLoansArr addObject: loanModel];
+            {
+                NSMutableArray *tmpGoingArr = [NSMutableArray new];
+                for (NSDictionary *dict in self.dataResultModel.going_loan) {
+                    MGLoanModel *loanModel = [MGLoanModel modelWithDict: dict];
+                    [tmpGoingArr addObject: loanModel];
+                }
+                self.goingLoansArr = [NSArray arrayWithArray: tmpGoingArr];
             }
-            
-            for (NSDictionary *dict in self.dataResultModel.user_loan) {
-                MGUserLoanModel *userLoanModel = [MGUserLoanModel modelWithDict: dict];
-                [self.userLoansArr addObject: userLoanModel];
+            {
+                NSMutableArray *tmpUserLoanArr = [NSMutableArray new];
+                for (NSDictionary *dict in self.dataResultModel.user_loan) {
+                    MGUserLoanModel *userLoanModel = [MGUserLoanModel modelWithDict: dict];
+                    [tmpUserLoanArr addObject: userLoanModel];
+                }
+                self.userLoansArr = [NSMutableArray arrayWithArray: tmpUserLoanArr];
             }
             
             [_networkActivityView stopAnimating];
@@ -228,7 +249,7 @@
         return self.userLoansArr.count;
     }
 }
-
+//
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0)
@@ -250,7 +271,7 @@
         return cell;
     }else
     {
-        static NSString *userLoanCellID = @"userLoanCellID";
+        static NSString *userLoanCellID = @"loanCellID";
         LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
         cell.userLoanModel = self.userLoansArr[indexPath.row];
         return cell;
@@ -285,6 +306,16 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
+        
+//        NSString *bannerViewID = [NSString stringWithFormat: @"bannerViewID_%lu", (unsigned long)self.bannersArr.count];
+//        MGBannerScrollView *bannerView = (MGBannerScrollView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier: bannerViewID];
+//        if (!bannerView) {
+//            CGFloat imageViewH = SCREEN_WIDTH * 7 / 15;
+//            CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, imageViewH);
+//            MGBannerScrollView * bannerView = [[MGBannerScrollView alloc] initWithFrame: frame withBannersArr: self.bannersArr];
+//            bannerView.delegate = self;
+//        }
+//        [bannerView setBannersArr: self.bannersArr];
         CGFloat imageViewH = SCREEN_WIDTH * 7 / 15;
         CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, imageViewH);
         MGBannerScrollView * bannerView = [[MGBannerScrollView alloc] initWithFrame: frame withBannersArr: self.bannersArr];
@@ -334,7 +365,9 @@
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (_isTop) {
+    //下拉刷新，下拉大与50时刷新
+    CGPoint offset = self.homeTableView.contentOffset;
+    if (_isTop && offset.y < -50.0) {
         [self sendRequest];
         _isTop = NO;
     }
