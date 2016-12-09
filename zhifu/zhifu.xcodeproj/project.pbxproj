@@ -33,6 +33,12 @@
 		012557351DF84B7100B41771 /* LoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557331DF84B7100B41771 /* LoanInforCell.m */; };
 		012557361DF84B7100B41771 /* LoanInforCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012557341DF84B7100B41771 /* LoanInforCell.xib */; };
 		012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557411DF92F1B00B41771 /* MGRegisterViewController.m */; };
+		012557471DF97CF700B41771 /* MGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557461DF97CF700B41771 /* MGLoginViewController.m */; };
+		0125574A1DF99DC900B41771 /* CreateBarBtnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557491DF99DC900B41771 /* CreateBarBtnItem.m */; };
+		0125574D1DF9AC1800B41771 /* MGBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */; };
+		012557501DFA41B400B41771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0125574F1DFA41B400B41771 /* Foundation.framework */; };
+		012557521DFA41BB00B41771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012557511DFA41BB00B41771 /* UIKit.framework */; };
+		012557551DFA4A7F00B41771 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557541DFA4A7F00B41771 /* CustomButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +111,16 @@
 		012557341DF84B7100B41771 /* LoanInforCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoanInforCell.xib; path = View/Cell/LoanInforCell.xib; sourceTree = "<group>"; };
 		012557401DF92F1B00B41771 /* MGRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGRegisterViewController.h; path = ViewController/MGRegisterViewController.h; sourceTree = "<group>"; };
 		012557411DF92F1B00B41771 /* MGRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGRegisterViewController.m; path = ViewController/MGRegisterViewController.m; sourceTree = "<group>"; };
+		012557451DF97CF700B41771 /* MGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLoginViewController.h; path = ViewController/MGLoginViewController.h; sourceTree = "<group>"; };
+		012557461DF97CF700B41771 /* MGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGLoginViewController.m; path = ViewController/MGLoginViewController.m; sourceTree = "<group>"; };
+		012557481DF99DC900B41771 /* CreateBarBtnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateBarBtnItem.h; path = Tool/CreateBarBtnItem.h; sourceTree = "<group>"; };
+		012557491DF99DC900B41771 /* CreateBarBtnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateBarBtnItem.m; path = Tool/CreateBarBtnItem.m; sourceTree = "<group>"; };
+		0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGBaseNavigationController.h; sourceTree = "<group>"; };
+		0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGBaseNavigationController.m; sourceTree = "<group>"; };
+		0125574F1DFA41B400B41771 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		012557511DFA41BB00B41771 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		012557531DFA4A7F00B41771 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = Tool/CustomButton.h; sourceTree = "<group>"; };
+		012557541DFA4A7F00B41771 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = Tool/CustomButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012557521DFA41BB00B41771 /* UIKit.framework in Frameworks */,
+				012557501DFA41B400B41771 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +157,7 @@
 				010F792D1DF564460001793B /* zhifuTests */,
 				010F79381DF564460001793B /* zhifuUITests */,
 				010F790F1DF564460001793B /* Products */,
+				0125574E1DFA41B300B41771 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +225,8 @@
 				0125573A1DF92B8600B41771 /* More */,
 				010F79661DF70E180001793B /* MGBaseViewController.h */,
 				010F79671DF70E180001793B /* MGBaseViewController.m */,
+				0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */,
+				0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +265,10 @@
 				010F79551DF69C0A0001793B /* GetUUID.m */,
 				0125572F1DF80AD300B41771 /* NSString+CountNumChangeFormat.h */,
 				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
+				012557481DF99DC900B41771 /* CreateBarBtnItem.h */,
+				012557491DF99DC900B41771 /* CreateBarBtnItem.m */,
+				012557531DFA4A7F00B41771 /* CustomButton.h */,
+				012557541DFA4A7F00B41771 /* CustomButton.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -279,6 +304,8 @@
 				010F796F1DF7C81D0001793B /* MGWebViewController.m */,
 				012557401DF92F1B00B41771 /* MGRegisterViewController.h */,
 				012557411DF92F1B00B41771 /* MGRegisterViewController.m */,
+				012557451DF97CF700B41771 /* MGLoginViewController.h */,
+				012557461DF97CF700B41771 /* MGLoginViewController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -308,6 +335,15 @@
 				010F794B1DF5B8110001793B /* MoreViewController.m */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		0125574E1DFA41B300B41771 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				012557511DFA41BB00B41771 /* UIKit.framework */,
+				0125574F1DFA41B400B41771 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0125574D1DF9AC1800B41771 /* MGBaseNavigationController.m in Sources */,
 				010F791C1DF564460001793B /* InvestViewController.m in Sources */,
 				010F794C1DF5B8110001793B /* MoreViewController.m in Sources */,
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
@@ -462,7 +499,9 @@
 				010F79161DF564460001793B /* AppDelegate.m in Sources */,
 				010F79191DF564460001793B /* HomeViewController.m in Sources */,
 				010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */,
+				012557551DFA4A7F00B41771 /* CustomButton.m in Sources */,
 				010F79561DF69C0A0001793B /* GetUUID.m in Sources */,
+				012557471DF97CF700B41771 /* MGLoginViewController.m in Sources */,
 				010F79131DF564460001793B /* main.m in Sources */,
 				010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */,
 				012557351DF84B7100B41771 /* LoanInforCell.m in Sources */,
@@ -471,6 +510,7 @@
 				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,
 				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
 				010F79651DF6FB840001793B /* MGUserLoanModel.m in Sources */,
+				0125574A1DF99DC900B41771 /* CreateBarBtnItem.m in Sources */,
 				010F79591DF69D720001793B /* MGKeyChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

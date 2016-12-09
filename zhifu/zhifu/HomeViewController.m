@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "MGMacro.h"
+#import "CreateBarBtnItem.h"
+
 #import "MGDataResultModel.h"
 #import "MGBannersModel.h"
 #import "MGLoanModel.h"
@@ -16,6 +18,8 @@
 #import "MGBannerScrollView.h"
 #import "MGWebViewController.h"
 #import "MGRegisterViewController.h"
+#import "MGLoginViewController.h"
+#import "MGBaseNavigationController.h"
 
 #import "UserInfoCell.h"
 #import "LoanInforCell.h"
@@ -63,6 +67,8 @@
     
     [self initArray];
     
+    [self initNaviBar];
+    
     [self initTableView];
     
     [self sendRequest];
@@ -76,6 +82,29 @@
     _goingLoansArr = [NSMutableArray new];
     _userLoansArr = [NSMutableArray new];
 }
+
+-(void)initNaviBar
+{
+    UIBarButtonItem *rightBtn = [CreateBarBtnItem createBarBtnItemWithTitle: @"登录"
+                                                                      image: @""
+                                                                      frame: CGRectMake(0, 0, 50, 25)
+                                                            titleEdgeInsets: UIEdgeInsetsZero
+                                                            imageEdgeInsets: UIEdgeInsetsZero
+                                                                     Target: self
+                                                                     select: @selector(loginNow)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+    
+}
+
+-(void)loginNow
+{
+    MGLoginViewController *loginVC = [MGLoginViewController getViewController];
+    MGBaseNavigationController *navi = [[MGBaseNavigationController alloc] initWithRootViewController: loginVC];
+    [self presentViewController: navi animated: YES completion:nil];
+    
+    
+}
+
 
 -(void)initTableView {
     
