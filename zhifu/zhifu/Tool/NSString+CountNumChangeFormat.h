@@ -11,4 +11,6 @@
 @interface NSString (CountNumChangeFormat)
 
 +(instancetype)changeFormatToEnglish:(NSString *)string;
+
++(BOOL)isMobileNumber:(NSString *)mobileNum;
 @end

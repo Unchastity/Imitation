@@ -21,7 +21,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-
+//button的size为 （60， 80）
 -(CGRect)titleRectForContentRect:(CGRect)contentRect
 {
     return CGRectMake( 0, 60, CGRectGetWidth(contentRect), 20.0);

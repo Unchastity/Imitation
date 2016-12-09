@@ -12,7 +12,10 @@
 @class MGBannersModel;
 @interface MGWebViewController :MGBaseViewController
 
+//banner
 @property (nonatomic, strong) MGBannersModel *bannersModel;
 
+//others
+@property (nonatomic, strong) NSString *urlStr;
 
 @end

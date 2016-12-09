@@ -17,10 +17,22 @@
 
 @property (nonatomic, strong) UIWebView *webView;
 
+@property (nonatomic, strong) NSString *webUrl;
+
 @end
 
 @implementation MGWebViewController
 
+-(NSString *)webUrl
+{
+    if (self.bannersModel != nil)
+    {
+        return  [NSString stringWithFormat: @"http://%@", self.bannersModel.href];
+    }else
+    {
+        return self.urlStr;
+    }
+}
 //在父类中设置self.hidesBottomBarWhenPushed
 
 //-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,8 +47,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.navigationItem setTitle: self.bannersModel.title];
+    if (self.bannersModel != nil) {
+        [self.navigationItem setTitle: self.bannersModel.title];
+    }else if (self.urlStr != nil){
+        [self.navigationItem setTitle: @"网站注册协议"];
+    }
     
     [self initNavigationBar];
     
@@ -71,13 +86,14 @@
 //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://www.baidu.com"]]];
     //NSString *webUrl = [NSString stringWithFormat:@"%@?parameters=fHxpb3M=", self.bannersModel.href ];
     //HTTP : 必须添加http://
-    NSString *webUrl = [NSString stringWithFormat:@"http://%@", self.bannersModel.href];
-    NSLog(@"web URL: %@", webUrl);
+
+//    NSString *webUrl = [NSString stringWithFormat:@"http://%@", self.bannersModel.href];
+    NSLog(@"web URL: %@", self.webUrl);
 //    NSString *htmlString = [NSString stringWithContentsOfURL: [NSURL URLWithString: webUrl] encoding:NSUTF8StringEncoding error: NULL ];
 //    
 //    [self.webView loadHTMLString:htmlString baseURL: [NSURL URLWithString: webUrl]];
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: webUrl]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: self.webUrl]]];
     
     _networkActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     _networkActivity.frame = CGRectMake(0, 0, 20, 20);

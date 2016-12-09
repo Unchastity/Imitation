@@ -27,6 +27,7 @@
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, MGBannerScrollViewDelegate, UserInfoCellDelegate>
 {
     UIActivityIndicatorView *_networkActivityView;
+    BOOL _isTop;
 }
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 
@@ -71,7 +72,13 @@
     
     [self initTableView];
     
-    [self sendRequest];
+    //启动动画加载刷新
+    [UIView animateWithDuration: 2.0 animations:^{
+        
+        self.homeTableView.transform = CGAffineTransformMakeTranslation(0, 50);
+        
+        [self sendRequest];
+    }];
 }
 
 -(void)initArray
@@ -131,15 +138,15 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
     
     NSString *urlStr = @"http://service.zhifubank.com/";
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlStr]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: urlStr] cachePolicy: 0 timeoutInterval:5.0];
     [request setHTTPMethod: @"POST"];
     
-    NSString *deviceHeight = [NSString stringWithFormat:@"device_height=%0.1f", SCREEN_HEIGHT];
-    NSString *deviceUUID = [NSString stringWithFormat:@"_deviceid_=%@", [[UIDevice currentDevice] identifierForVendor].UUIDString];
-    NSString *deviceSysVer =[NSString stringWithFormat:@"20%@", [[UIDevice currentDevice] systemVersion]];
-    NSString *deviceType = [NSString stringWithFormat:@"device_os=%@%%", [[UIDevice currentDevice] systemName]];
-    NSString *deviceWidth = [NSString stringWithFormat:@"device_width=%0.1f", SCREEN_WIDTH];
-    NSString *deviceOS = [deviceType stringByAppendingString: deviceSysVer];
+//    NSString *deviceHeight = [NSString stringWithFormat:@"device_height=%0.1f", SCREEN_HEIGHT];
+//    NSString *deviceUUID = [NSString stringWithFormat:@"_deviceid_=%@", [[UIDevice currentDevice] identifierForVendor].UUIDString];
+//    NSString *deviceSysVer =[NSString stringWithFormat:@"20%@", [[UIDevice currentDevice] systemVersion]];
+//    NSString *deviceType = [NSString stringWithFormat:@"device_os=%@%%", [[UIDevice currentDevice] systemName]];
+//    NSString *deviceWidth = [NSString stringWithFormat:@"device_width=%0.1f", SCREEN_WIDTH];
+//    NSString *deviceOS = [deviceType stringByAppendingString: deviceSysVer];
     NSString *bodyStr = [NSString stringWithFormat:@"_client_=IOS&_cmd_=init&%@&_sign_=51ed374edd68818a377328e2dddca0c4&_token_=&%@&%@&%@&version=2.4.5", deviceUUID, deviceHeight, deviceOS, deviceWidth];
     NSData *bodyData = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
     [request setHTTPBody: bodyData];
@@ -173,6 +180,11 @@
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
             
             [self.homeTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration: 2.0 animations:^{
+                    self.homeTableView.transform = CGAffineTransformIdentity;
+                }];
+            });
         }else
         {
             
@@ -307,6 +319,25 @@
     NSLog(@"clickRegisterNowBtn");
     MGRegisterViewController *registerVC = [MGRegisterViewController registerViewControllerFromStoryboard];
     [self.navigationController pushViewController: registerVC animated:YES];
+}
+
+#pragma mark - refresh
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    CGPoint offset = self.homeTableView.contentOffset;
+    if (offset.x == 0 && offset.y == 0) {
+        _isTop = YES;
+    }else {
+        _isTop = NO;
+    }
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (_isTop) {
+        [self sendRequest];
+        _isTop = NO;
+    }
 }
 
 @end

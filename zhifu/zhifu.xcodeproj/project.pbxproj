@@ -39,6 +39,9 @@
 		012557501DFA41B400B41771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0125574F1DFA41B400B41771 /* Foundation.framework */; };
 		012557521DFA41BB00B41771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012557511DFA41BB00B41771 /* UIKit.framework */; };
 		012557551DFA4A7F00B41771 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557541DFA4A7F00B41771 /* CustomButton.m */; };
+		012557581DFA578B00B41771 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557571DFA578B00B41771 /* MGAlertController.m */; };
+		0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */; };
+		012557601DFAA32E00B41771 /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +124,12 @@
 		012557511DFA41BB00B41771 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		012557531DFA4A7F00B41771 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton.h; path = Tool/CustomButton.h; sourceTree = "<group>"; };
 		012557541DFA4A7F00B41771 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton.m; path = Tool/CustomButton.m; sourceTree = "<group>"; };
+		012557561DFA578B00B41771 /* MGAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAlertController.h; sourceTree = "<group>"; };
+		012557571DFA578B00B41771 /* MGAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAlertController.m; sourceTree = "<group>"; };
+		0125575A1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+CreateAlertControllerQuickly.h"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.h"; sourceTree = "<group>"; };
+		0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+CreateAlertControllerQuickly.m"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.m"; sourceTree = "<group>"; };
+		0125575E1DFAA32E00B41771 /* MGFogetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGFogetPWViewController.h; path = ViewController/MGFogetPWViewController.h; sourceTree = "<group>"; };
+		0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGFogetPWViewController.m; path = ViewController/MGFogetPWViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,10 +232,7 @@
 				012557381DF92B6E00B41771 /* invest */,
 				012557391DF92B7D00B41771 /* User */,
 				0125573A1DF92B8600B41771 /* More */,
-				010F79661DF70E180001793B /* MGBaseViewController.h */,
-				010F79671DF70E180001793B /* MGBaseViewController.m */,
-				0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */,
-				0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */,
+				012557591DFA579600B41771 /* BaseClass */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -258,13 +264,12 @@
 		010F79511DF690440001793B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				0125575D1DFA5D1E00B41771 /* category */,
 				010F79521DF6958B0001793B /* MGMacro.h */,
 				010F79571DF69D720001793B /* MGKeyChain.h */,
 				010F79581DF69D720001793B /* MGKeyChain.m */,
 				010F79541DF69C0A0001793B /* GetUUID.h */,
 				010F79551DF69C0A0001793B /* GetUUID.m */,
-				0125572F1DF80AD300B41771 /* NSString+CountNumChangeFormat.h */,
-				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
 				012557481DF99DC900B41771 /* CreateBarBtnItem.h */,
 				012557491DF99DC900B41771 /* CreateBarBtnItem.m */,
 				012557531DFA4A7F00B41771 /* CustomButton.h */,
@@ -306,6 +311,8 @@
 				012557411DF92F1B00B41771 /* MGRegisterViewController.m */,
 				012557451DF97CF700B41771 /* MGLoginViewController.h */,
 				012557461DF97CF700B41771 /* MGLoginViewController.m */,
+				0125575E1DFAA32E00B41771 /* MGFogetPWViewController.h */,
+				0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -344,6 +351,30 @@
 				0125574F1DFA41B400B41771 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		012557591DFA579600B41771 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				010F79661DF70E180001793B /* MGBaseViewController.h */,
+				010F79671DF70E180001793B /* MGBaseViewController.m */,
+				0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */,
+				0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */,
+				012557561DFA578B00B41771 /* MGAlertController.h */,
+				012557571DFA578B00B41771 /* MGAlertController.m */,
+			);
+			name = BaseClass;
+			sourceTree = "<group>";
+		};
+		0125575D1DFA5D1E00B41771 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				0125575A1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.h */,
+				0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */,
+				0125572F1DF80AD300B41771 /* NSString+CountNumChangeFormat.h */,
+				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
+			);
+			name = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,10 +526,13 @@
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
 				010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */,
 				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
+				012557581DFA578B00B41771 /* MGAlertController.m in Sources */,
 				010F795F1DF6C37C0001793B /* MGBannersModel.m in Sources */,
 				010F79161DF564460001793B /* AppDelegate.m in Sources */,
 				010F79191DF564460001793B /* HomeViewController.m in Sources */,
 				010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */,
+				012557601DFAA32E00B41771 /* MGFogetPWViewController.m in Sources */,
+				0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */,
 				012557551DFA4A7F00B41771 /* CustomButton.m in Sources */,
 				010F79561DF69C0A0001793B /* GetUUID.m in Sources */,
 				012557471DF97CF700B41771 /* MGLoginViewController.m in Sources */,

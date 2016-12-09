@@ -14,5 +14,12 @@
 
 #define NavigationBarY CGRectGetMaxY(self.navigationController.navigationBar.frame)
 
+#define  deviceHeight   [NSString stringWithFormat:@"device_height=%0.1f", SCREEN_HEIGHT]
+#define  deviceUUID     [NSString stringWithFormat:@"_deviceid_=%@", [[UIDevice currentDevice] identifierForVendor].UUIDString]
+#define  deviceSysVer   [NSString stringWithFormat:@"20%@", [[UIDevice currentDevice] systemVersion]]
+#define  deviceType     [NSString stringWithFormat:@"device_os=%@%%", [[UIDevice currentDevice] systemName]]
+#define  deviceWidth    [NSString stringWithFormat:@"device_width=%0.1f", SCREEN_WIDTH]
+#define  deviceOS       [deviceType stringByAppendingString: deviceSysVer]
+
 
 #endif /* MGMacro_h */
