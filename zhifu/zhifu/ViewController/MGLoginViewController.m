@@ -13,6 +13,8 @@
 #import "UIAlertController+CreateAlertControllerQuickly.h"
 #import "MGMacro.h"
 
+#import "MGFogetPWViewController.h"
+
 @interface MGLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *userIDText;
@@ -101,7 +103,9 @@
 
 - (IBAction)forgetPassword:(UIButton *)sender {
     
-    
+    MGFogetPWViewController *forgetVC = [MGFogetPWViewController getViewControllerFromStoryboard];
+    [self.navigationController pushViewController: forgetVC animated:YES];
+
 }
 
 - (IBAction)loginNow:(UIButton *)sender {

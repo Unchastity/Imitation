@@ -41,7 +41,7 @@
 		012557551DFA4A7F00B41771 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557541DFA4A7F00B41771 /* CustomButton.m */; };
 		012557581DFA578B00B41771 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557571DFA578B00B41771 /* MGAlertController.m */; };
 		0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */; };
-		012557601DFAA32E00B41771 /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */; };
+		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,8 +128,8 @@
 		012557571DFA578B00B41771 /* MGAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAlertController.m; sourceTree = "<group>"; };
 		0125575A1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+CreateAlertControllerQuickly.h"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.h"; sourceTree = "<group>"; };
 		0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+CreateAlertControllerQuickly.m"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.m"; sourceTree = "<group>"; };
-		0125575E1DFAA32E00B41771 /* MGFogetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGFogetPWViewController.h; path = ViewController/MGFogetPWViewController.h; sourceTree = "<group>"; };
-		0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGFogetPWViewController.m; path = ViewController/MGFogetPWViewController.m; sourceTree = "<group>"; };
+		01A2CB7A1DFAF29D0045D06D /* MGFogetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFogetPWViewController.h; sourceTree = "<group>"; };
+		01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFogetPWViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,8 +311,8 @@
 				012557411DF92F1B00B41771 /* MGRegisterViewController.m */,
 				012557451DF97CF700B41771 /* MGLoginViewController.h */,
 				012557461DF97CF700B41771 /* MGLoginViewController.m */,
-				0125575E1DFAA32E00B41771 /* MGFogetPWViewController.h */,
-				0125575F1DFAA32E00B41771 /* MGFogetPWViewController.m */,
+				01A2CB7A1DFAF29D0045D06D /* MGFogetPWViewController.h */,
+				01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 				010F79161DF564460001793B /* AppDelegate.m in Sources */,
 				010F79191DF564460001793B /* HomeViewController.m in Sources */,
 				010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */,
-				012557601DFAA32E00B41771 /* MGFogetPWViewController.m in Sources */,
+				01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */,
 				0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */,
 				012557551DFA4A7F00B41771 /* CustomButton.m in Sources */,
 				010F79561DF69C0A0001793B /* GetUUID.m in Sources */,

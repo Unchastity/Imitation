@@ -10,4 +10,6 @@
 
 @interface MGFogetPWViewController : MGBaseViewController
 
++(instancetype)getViewControllerFromStoryboard;
+
 @end
