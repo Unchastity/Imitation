@@ -14,7 +14,10 @@
     1.1->通过修改nib文件cell的identifier，调试发现cell以重用，担内存仍然在增加，不过增加量下降，可能是tableView的headView
     1.2 测试发现，bannerView每次消失在出现时，都会再次重建，并增加内存，增加量前后一致
     1.2->实现bannerView的优化
-            MGBannerScrollView 继承 UITableViewHeaderFooterView
+           1）MGBannerScrollView 继承 UITableViewHeaderFooterView
+            重写initWithReuseIdentifier，添加控件，注意次数headerView或footerView的contentView的frame 为0
+           2）自定义view，将view添加到系统的headerVIew或footerView上
+ 
  */
 
 #import "HomeViewController.h"
@@ -31,6 +34,7 @@
 #import "MGRegisterViewController.h"
 #import "MGLoginViewController.h"
 #import "MGBaseNavigationController.h"
+#import "MGDetailTableViewController.h"
 
 #import "UserInfoCell.h"
 #import "LoanInforCell.h"
@@ -297,30 +301,56 @@
     if (indexPath.section ==1)
     {
         NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
+        MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
+        if (self.loanNewModel != nil) {
+            if (indexPath.row == 0) {
+                detailVC.loanModel = self.loanNewModel;
+            }else {
+                detailVC.loanModel = self.goingLoansArr[indexPath.row - 1];
+            }
+        }else
+        {
+            detailVC.loanModel = self.goingLoansArr[indexPath.row];
+        }
+        [self.navigationController pushViewController: detailVC animated:YES];
     }else if (indexPath.section == 2)
     {
         NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
+        MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
+        detailVC.userLoanModel = self.userLoansArr[indexPath.row];
+        [self.navigationController pushViewController: detailVC animated:YES];
     }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
+
+    /*
+    static NSString *bannerViewID = @"bannerViewID";
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier: bannerViewID];
+    if (!headerView) {
         
-//        NSString *bannerViewID = [NSString stringWithFormat: @"bannerViewID_%lu", (unsigned long)self.bannersArr.count];
-//        MGBannerScrollView *bannerView = (MGBannerScrollView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier: bannerViewID];
-//        if (!bannerView) {
-//            CGFloat imageViewH = SCREEN_WIDTH * 7 / 15;
-//            CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, imageViewH);
-//            MGBannerScrollView * bannerView = [[MGBannerScrollView alloc] initWithFrame: frame withBannersArr: self.bannersArr];
-//            bannerView.delegate = self;
-//        }
-//        [bannerView setBannersArr: self.bannersArr];
+        headerView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier: bannerViewID];
+        if (section == 0) {
+            CGFloat imageViewH = SCREEN_WIDTH * 7 / 15;
+            CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, imageViewH);
+            MGBannerScrollView * bannerView = [[MGBannerScrollView alloc] initWithFrame: frame withBannersArr: self.bannersArr];
+            [bannerView setBannersArr: self.bannersArr];
+            bannerView.delegate = self;
+            
+            [headerView addSubview: bannerView];
+            [headerView bringSubviewToFront: bannerView];
+        }
+    }
+    return headerView;
+     */
+    if (section == 0) {
         CGFloat imageViewH = SCREEN_WIDTH * 7 / 15;
         CGRect frame = CGRectMake(0, 0, SCREEN_WIDTH, imageViewH);
         MGBannerScrollView * bannerView = [[MGBannerScrollView alloc] initWithFrame: frame withBannersArr: self.bannersArr];
         [bannerView setBannersArr: self.bannersArr];
         bannerView.delegate = self;
+        
         return bannerView;
     }
     return nil;

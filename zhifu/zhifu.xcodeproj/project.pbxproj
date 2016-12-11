@@ -42,6 +42,8 @@
 		012557581DFA578B00B41771 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557571DFA578B00B41771 /* MGAlertController.m */; };
 		0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */; };
 		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
+		01A2CB821DFC3EE30045D06D /* MGDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB811DFC3EE30045D06D /* MGDetailTableViewController.m */; };
+		01A2CB871DFC43250045D06D /* LoanTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB861DFC43250045D06D /* LoanTitleHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,10 @@
 		0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+CreateAlertControllerQuickly.m"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.m"; sourceTree = "<group>"; };
 		01A2CB7A1DFAF29D0045D06D /* MGFogetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFogetPWViewController.h; sourceTree = "<group>"; };
 		01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFogetPWViewController.m; sourceTree = "<group>"; };
+		01A2CB801DFC3EE30045D06D /* MGDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGDetailTableViewController.h; path = ViewController/MGDetailTableViewController.h; sourceTree = "<group>"; };
+		01A2CB811DFC3EE30045D06D /* MGDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGDetailTableViewController.m; path = ViewController/MGDetailTableViewController.m; sourceTree = "<group>"; };
+		01A2CB851DFC43250045D06D /* LoanTitleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoanTitleHeaderView.h; path = View/MGLoanDetail/LoanTitleHeaderView.h; sourceTree = "<group>"; };
+		01A2CB861DFC43250045D06D /* LoanTitleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoanTitleHeaderView.m; path = View/MGLoanDetail/LoanTitleHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,7 @@
 		010F794F1DF68F9B0001793B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01A2CB841DFC42CA0045D06D /* MGLoanDetail */,
 				010F796A1DF70F810001793B /* CustomView */,
 				010F79691DF70F7A0001793B /* Cell */,
 			);
@@ -313,6 +320,8 @@
 				012557461DF97CF700B41771 /* MGLoginViewController.m */,
 				01A2CB7A1DFAF29D0045D06D /* MGFogetPWViewController.h */,
 				01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */,
+				01A2CB801DFC3EE30045D06D /* MGDetailTableViewController.h */,
+				01A2CB811DFC3EE30045D06D /* MGDetailTableViewController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -375,6 +384,15 @@
 				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
 			);
 			name = category;
+			sourceTree = "<group>";
+		};
+		01A2CB841DFC42CA0045D06D /* MGLoanDetail */ = {
+			isa = PBXGroup;
+			children = (
+				01A2CB851DFC43250045D06D /* LoanTitleHeaderView.h */,
+				01A2CB861DFC43250045D06D /* LoanTitleHeaderView.m */,
+			);
+			name = MGLoanDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +541,7 @@
 				0125574D1DF9AC1800B41771 /* MGBaseNavigationController.m in Sources */,
 				010F791C1DF564460001793B /* InvestViewController.m in Sources */,
 				010F794C1DF5B8110001793B /* MoreViewController.m in Sources */,
+				01A2CB821DFC3EE30045D06D /* MGDetailTableViewController.m in Sources */,
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
 				010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */,
 				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
@@ -543,6 +562,7 @@
 				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
 				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,
 				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
+				01A2CB871DFC43250045D06D /* LoanTitleHeaderView.m in Sources */,
 				010F79651DF6FB840001793B /* MGUserLoanModel.m in Sources */,
 				0125574A1DF99DC900B41771 /* CreateBarBtnItem.m in Sources */,
 				010F79591DF69D720001793B /* MGKeyChain.m in Sources */,
