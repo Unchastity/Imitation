@@ -8,8 +8,8 @@
 
 #import "LoanInforCell.h"
 
-#import "MGLoanModel.h"
-#import "MGUserLoanModel.h"
+//#import "MGLoanModel.h"
+//#import "MGUserLoanModel.h"
 
 @interface LoanInforCell ()
 
@@ -108,10 +108,10 @@
 }
 
 
--(void)setLoanModel:(MGLoanModel *)loanModel
-{
-    _loanModel = loanModel;
-    
+//-(void)setLoanModel:(MGLoanModel *)loanModel
+//{
+//    _loanModel = loanModel;
+//    
 //    //投资
 //    [self.loadMoneyKeyLabel     setText: @"借款金额"];
 //    [self.limitDateLoanKeyLabel setText: @"借款期限"];
@@ -165,12 +165,12 @@
 //        NSString *str = [NSString stringWithFormat:@"%0.1f%%", ratioProgress*100.0];
 //        [self.statusLabel setText: str];
 //    }
-}
+//}
 
--(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel
-{
-    _userLoanModel = userLoanModel;
-    
+//-(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel
+//{
+//    _userLoanModel = userLoanModel;
+//    
 //    //债权
 //    [self.loadMoneyKeyLabel     setText: @"转让金额"];
 //    [self.limitDateLoanKeyLabel setText: @"剩余天数"];
@@ -213,7 +213,7 @@
 //        NSString *str = [NSString stringWithFormat:@"%0.1f%%", ratioProgress*100.0];
 //        [self.statusLabel setText: str];
 //    }
-}
+//}
 
 -(void)setIsDetailCell:(BOOL)isDetailCell
 {

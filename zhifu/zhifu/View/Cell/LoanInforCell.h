@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class MGLoanModel, MGUserLoanModel;
+//@class MGLoanModel, MGUserLoanModel;
 @interface LoanInforCell : UITableViewCell
 
 @property (nonatomic, assign, getter= hideTitleAndBondImage) BOOL isDetailCell;
-
-@property (nonatomic, strong) MGLoanModel *loanModel;
-
-@property (nonatomic, strong) MGUserLoanModel *userLoanModel;
-
--(void)setLoanModel:(MGLoanModel *)loanModel;
-
--(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel;
-
+//
+//@property (nonatomic, strong) MGLoanModel *loanModel;
+//
+//@property (nonatomic, strong) MGUserLoanModel *userLoanModel;
+//
+//-(void)setLoanModel:(MGLoanModel *)loanModel;
+//
+//-(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel;
+//
 
 /**
  产品名称

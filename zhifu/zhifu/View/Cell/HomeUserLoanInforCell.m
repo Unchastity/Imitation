@@ -13,7 +13,7 @@
 
 -(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel
 {
-    [super setUserLoanModel: userLoanModel];
+    //[super setUserLoanModel: userLoanModel];
     //债权
     [self.loadMoneyKeyLabel     setText: @"转让金额"];
     [self.limitDateLoanKeyLabel setText: @"剩余天数"];

@@ -49,6 +49,7 @@
 		01A2CB971DFFA0AD0045D06D /* InviteLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB961DFFA0AD0045D06D /* InviteLoanInforCell.m */; };
 		01A2CB9B1DFFA1650045D06D /* HomeLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */; };
 		01A2CB9E1DFFA3F40045D06D /* HomeUserLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */; };
+		01A2CBA11DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeLoanInforCell.m; path = View/Cell/HomeLoanInforCell.m; sourceTree = "<group>"; };
 		01A2CB9C1DFFA3F40045D06D /* HomeUserLoanInforCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeUserLoanInforCell.h; path = View/Cell/HomeUserLoanInforCell.h; sourceTree = "<group>"; };
 		01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeUserLoanInforCell.m; path = View/Cell/HomeUserLoanInforCell.m; sourceTree = "<group>"; };
+		01A2CB9F1DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+HomeLoanInforCell.h"; path = "View/Cell/LoanInforCell+HomeLoanInforCell.h"; sourceTree = "<group>"; };
+		01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoanInforCell+HomeLoanInforCell.m"; path = "View/Cell/LoanInforCell+HomeLoanInforCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +315,8 @@
 				012557321DF84B7100B41771 /* LoanInforCell.h */,
 				012557331DF84B7100B41771 /* LoanInforCell.m */,
 				012557341DF84B7100B41771 /* LoanInforCell.xib */,
+				01A2CB9F1DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.h */,
+				01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */,
 				01A2CB991DFFA1650045D06D /* HomeLoanInforCell.h */,
 				01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */,
 				01A2CB9C1DFFA3F40045D06D /* HomeUserLoanInforCell.h */,
@@ -575,6 +580,7 @@
 				0125574D1DF9AC1800B41771 /* MGBaseNavigationController.m in Sources */,
 				010F791C1DF564460001793B /* InvestViewController.m in Sources */,
 				010F794C1DF5B8110001793B /* MoreViewController.m in Sources */,
+				01A2CBA11DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m in Sources */,
 				01A2CB821DFC3EE30045D06D /* MGDetailTableViewController.m in Sources */,
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
 				01A2CB971DFFA0AD0045D06D /* InviteLoanInforCell.m in Sources */,

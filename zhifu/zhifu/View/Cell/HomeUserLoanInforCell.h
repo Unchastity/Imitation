@@ -11,7 +11,7 @@
 @class MGUserLoanModel;
 @interface HomeUserLoanInforCell : LoanInforCell
 
-//@property (nonatomic, strong) MGUserLoanModel *userLoanModel;
+@property (nonatomic, strong) MGUserLoanModel *userLoanModel;
 
 -(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel;
 @end

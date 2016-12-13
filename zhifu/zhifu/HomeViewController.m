@@ -40,6 +40,7 @@
 #import "HomeLoanInforCell.h"
 #import "HomeUserLoanInforCell.h"
 
+#import "LoanInforCell+HomeLoanInforCell.h"
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, MGBannerScrollViewDelegate, UserInfoCellDelegate>
 {
     UIActivityIndicatorView *_networkActivityView;
@@ -266,7 +267,7 @@
     }else if (indexPath.section == 1)
     {
         static NSString *loanCellID = @"loanCellID";
-        HomeLoanInforCell *cell = (HomeLoanInforCell *)[HomeLoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
+        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
         if (self.dataResultModel.newloan != nil && indexPath.row == 0) {
             [cell setLoanModel: self.loanNewModel];
         }else
@@ -276,8 +277,12 @@
         return cell;
     }else
     {
-        static NSString *userLoanCellID = @"loanCellID";
-        HomeUserLoanInforCell *cell = (HomeUserLoanInforCell *)[HomeUserLoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
+//        static NSString *userLoanCellID = @"loanCellID";
+//        HomeUserLoanInforCell *cell = (HomeUserLoanInforCell *)[HomeUserLoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
+//        cell.userLoanModel = self.userLoansArr[indexPath.row];
+//        return cell;
+        static NSString *loanCellID = @"loanCellID";
+        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
         cell.userLoanModel = self.userLoansArr[indexPath.row];
         return cell;
     }
