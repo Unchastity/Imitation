@@ -12,6 +12,8 @@
 
 @interface MGDetailTableViewController : UITableViewController
 
+@property (nonatomic, assign) BOOL isLoanSection;
+
 @property (nonatomic, strong) MGLoanModel       *loanModel;
 @property (nonatomic, strong) MGUserLoanModel   *userLoanModel;
 

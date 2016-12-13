@@ -37,7 +37,8 @@
 #import "MGDetailTableViewController.h"
 
 #import "UserInfoCell.h"
-#import "LoanInforCell.h"
+#import "HomeLoanInforCell.h"
+#import "HomeUserLoanInforCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, MGBannerScrollViewDelegate, UserInfoCellDelegate>
 {
@@ -265,18 +266,18 @@
     }else if (indexPath.section == 1)
     {
         static NSString *loanCellID = @"loanCellID";
-        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
+        HomeLoanInforCell *cell = (HomeLoanInforCell *)[HomeLoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
         if (self.dataResultModel.newloan != nil && indexPath.row == 0) {
-            cell.loanModel = self.loanNewModel;
+            [cell setLoanModel: self.loanNewModel];
         }else
         {
-            cell.loanModel = self.goingLoansArr[indexPath.row - 1];
+            [cell setLoanModel: self.goingLoansArr[indexPath.row - 1]];
         }
         return cell;
     }else
     {
         static NSString *userLoanCellID = @"loanCellID";
-        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
+        HomeUserLoanInforCell *cell = (HomeUserLoanInforCell *)[HomeUserLoanInforCell cellForTableView: tableView reuseIdentifier: userLoanCellID];
         cell.userLoanModel = self.userLoansArr[indexPath.row];
         return cell;
     }
@@ -312,12 +313,14 @@
         {
             detailVC.loanModel = self.goingLoansArr[indexPath.row];
         }
+        detailVC.isLoanSection = YES;
         [self.navigationController pushViewController: detailVC animated:YES];
     }else if (indexPath.section == 2)
     {
         NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
         MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
         detailVC.userLoanModel = self.userLoansArr[indexPath.row];
+        detailVC.isLoanSection = NO;
         [self.navigationController pushViewController: detailVC animated:YES];
     }
 }

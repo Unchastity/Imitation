@@ -20,11 +20,28 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-//- (void)drawRect:(CGRect)rect {
+//- (void)drawRect:(CGRect)rect { //return 后调用
 //    // Drawing code
 //    [super drawRect: rect];
+//    
+//    CGRect headerViewFrame  = self.contentView.frame; // height = 70
+//    //        CGRect headerViewFrame = self.frame;
+//    UILabel *loansnLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, headerViewFrame.size.width - 24, 19)];
+//    loansnLabel.font = [UIFont systemFontOfSize: 10.0];
+//    loansnLabel.textAlignment = NSTextAlignmentLeft;
+//    loansnLabel.textColor = [UIColor blackColor];
+//    self.loansnLabel = loansnLabel;
+//    [self.contentView addSubview: loansnLabel];
+//    
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(8, 30, headerViewFrame.size.width - 24, 30)];
+//    titleLabel.font = [UIFont systemFontOfSize: 15.0];
+//    titleLabel.textAlignment = NSTextAlignmentLeft;
+//    titleLabel.textColor = [UIColor blackColor];
+//    self.loanTitleLabel = titleLabel;
+//    [self.contentView addSubview: titleLabel];
+
 //}
-//
+
 //先调用，此时headerView 的size为0，再调用drawRect
 -(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -53,22 +70,23 @@
 ////重写 superclass 的textLabel
 //-(UILabel *)textLabel
 //{
-//    CGRect headerViewFrame  = self.contentView.frame; // height = 70
-//    UILabel *loansnLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, headerViewFrame.size.width - 24, 19)];
+////    CGRect headerViewFrame  = self.contentView.frame; // height = 70
+//    UILabel *loansnLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, SCREEN_WIDTH - 24, 19)];
 //    loansnLabel.font = [UIFont systemFontOfSize: 10.0];
 //    loansnLabel.textAlignment = NSTextAlignmentLeft;
 //    loansnLabel.textColor = [UIColor blackColor];
-//    
+//    [self.contentView addSubview: loansnLabel];
 //    return loansnLabel;
 //}
 ////重写superClass 的detailTextLabel
 //-(UILabel *)detailTextLabel
 //{
-//    CGRect headerViewFrame  = self.contentView.frame; // height = 70
-//    UILabel *titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(8, 30, headerViewFrame.size.width - 24, 30)];
+////    CGRect headerViewFrame  = self.contentView.frame; // height = 70
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(8, 30, SCREEN_WIDTH - 24, 30)];
 //    titleLabel.font = [UIFont systemFontOfSize: 15.0];
 //    titleLabel.textAlignment = NSTextAlignmentLeft;
 //    titleLabel.textColor = [UIColor blackColor];
+//    [self.contentView addSubview: titleLabel];
 //    return titleLabel;
 //}
 
@@ -76,14 +94,14 @@
 {
     _title = title;
     [self.loanTitleLabel setText: title];
-    //[self.textLabel setText: title];
+//    [self.textLabel setText: title];
 }
 
 -(void)setLoansn:(NSString *)loansn
 {
     _loansn = loansn;
-    [self.loansnLabel setText: loansn];
-    //[self.detailTextLabel setText: loansn];
+    [self.loansnLabel setText: [NSString stringWithFormat:@"项目编号:%@", loansn]];
+//    [self.detailTextLabel setText: loansn];
 }
 
 @end
