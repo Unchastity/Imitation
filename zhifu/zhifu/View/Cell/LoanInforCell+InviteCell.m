@@ -1,23 +1,20 @@
 //
-//  LoanInforCell+HomeLoanInforCell.m
+//  LoanInforCell+InviteCell.m
 //  zhifu
 //
-//  Created by Unchastity on 12/13/16.
+//  Created by Unchastity on 12/16/16.
 //  Copyright © 2016 Unchastity. All rights reserved.
 //
 
-#import "LoanInforCell+HomeLoanInforCell.h"
-#import "MGLoanModel.h"
-#import "MGUserLoanModel.h"
+#import "LoanInforCell+InviteCell.h"
 
-@interface LoanInforCell ()
+#import "MGInviteLoanModel.h"
+#import "MGInviteUserLoanModel.h"
 
-@end
-
-@implementation LoanInforCell (HomeLoanInforCell)
+@implementation LoanInforCell (InviteCell)
 @dynamic loanModel, userLoanModel;
 
--(void)setLoanModel:(MGLoanModel *)loanModel
+-(void)setLoanModel:(MGInviteLoanModel *)loanModel
 {
     //投资
     [self.loadMoneyKeyLabel     setText: @"借款金额"];
@@ -76,7 +73,7 @@
     }
 }
 
--(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel
+-(void)setUserLoanModel:(MGInviteUserLoanModel *)userLoanModel
 {
     //债权
     [self.loadMoneyKeyLabel     setText: @"转让金额"];
@@ -99,7 +96,8 @@
     NSString *money = [NSString stringWithFormat:@"%@元", userLoanModel.loanmoney];
     [self.loadModnyLabel setText: money];
     //剩余天数
-    [self.msgLabel setText: userLoanModel.rest_days.stringValue];
+    NSString *restDay = [NSString stringWithFormat: @"%ld", userLoanModel.rest_days];
+    [self.msgLabel setText: restDay];
     //受让收益
     NSString *overflowMoney = [NSString stringWithFormat:@"%@元", userLoanModel.overflow_money];
     [self.repaymentLabel setText: overflowMoney];

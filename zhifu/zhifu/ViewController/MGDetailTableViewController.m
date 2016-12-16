@@ -7,17 +7,24 @@
 //
 
 #import "MGDetailTableViewController.h"
-#import "MGLoanModel.h"
-#import "MGUserLoanModel.h"
+#import "MGMacro.h"
+
+#import "MGDetailLoanModel.h"
+#import "MGDetailUserLoanModel.h"
 
 #import "LoanTitleHeaderView.h"
-#import "HomeLoanInforCell.h"
-#import "HomeUserLoanInforCell.h"
+#import "LoanInforCell+HomeLoanInforCell.h"
+
 @interface MGDetailTableViewController ()
 {
     NSArray *_loanStatusListArr;
     NSArray *_loanStatusImageList;
+    UIActivityIndicatorView *_activityIndicator;
 }
+
+@property (nonatomic, strong) MGDetailLoanModel       *loanModel;
+@property (nonatomic, strong) MGDetailUserLoanModel   *userLoanModel;
+
 @property (nonatomic, strong) NSMutableArray *statusArr;
 @end
 
@@ -31,18 +38,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     [self.navigationItem setTitle: @"投资详情"];
-    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    _loanStatusListArr = @[@"发标时间", @"当前状态", @"已投金额", @"可投金额", @"最低投标金额", @"让利金额"];
-    _loanStatusImageList = @[@"icon_t_time", @"icon_t_startTime", @"icon_t_money_red", @"icon_t_money_green", @"icon_t_money_red", @"icon_t_money_decress"];
+    [self initData];
+    
+    if (self.isLoanSection) {
+        [self sendLoanRequest];
+    }else {
+        [self sendUserLoanRequest];
+    }
 }
 
+-(void)initData
+{
+    _loanStatusListArr = @[@"发标时间", @"当前状态", @"已投金额", @"可投金额", @"最低投标金额", @"让利金额"];
+    _loanStatusImageList = @[@"icon_t_time", @"icon_t_startTime", @"icon_t_money_red", @"icon_t_money_green", @"icon_t_money_red", @"icon_t_money_decress"];
+    
+//    _loanModel = [[MGDetailLoanModel alloc] init];
+//    _userLoanModel = [[MGDetailUserLoanModel alloc] init];
+}
+
+-(void)sendLoanRequest
+{
+    NSString *urlStr = @"http://service.zhifubank.com/";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: urlStr]];
+    [request setHTTPMethod: @"POST"];
+    NSString *badyStr = [NSString stringWithFormat: @"_client_=IOS&_cmd_=loan_detail&%@&_sign_=c261aae92a1fd3d26c4e9b79e00a2f4a&page_type=&sn=%@",deviceUUID, self.loanSN];
+    [request setHTTPBody: [badyStr dataUsingEncoding: NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData: data options: 0 error: 0];
+            NSDictionary *dataResultDict = dict[@"dataresult"];
+            
+            _loanModel = [MGDetailLoanModel modelWithDict: dataResultDict[@"loan_info"]];
+            [self.tableView reloadData];
+        }
+    }];
+    [task resume];
+}
+
+-(void)sendUserLoanRequest
+{
+    NSString *urlStr = @"http://service.zhifubank.com/";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: urlStr]];
+    [request setHTTPMethod: @"POST"];
+    NSString *badyStr = [NSString stringWithFormat: @"_client_=IOS&_cmd_=user_loan_info&%@&_sign_=8b4160e65402f45fea4054e8a752f4d9&loansn=%@&page_type=&user_loansn=%@",deviceUUID, self.loanSN, self.user_loanSN];
+    [request setHTTPBody: [badyStr dataUsingEncoding: NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (!error) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData: data options: 0 error: 0];
+            NSDictionary *dataResultDict = dict[@"dataresult"];
+            
+            _userLoanModel = [MGDetailUserLoanModel modelWithDict: dataResultDict[@"loan_info"]];
+            [self.tableView reloadData];
+        }
+    }];
+    [task resume];
+}
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -69,15 +124,14 @@
     if (indexPath.section == 0)
     {
         static NSString *loanCellID = @"loanCellID";
+         LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
         if (_isLoanSection)
         {
-            HomeLoanInforCell *cell = [HomeLoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
             cell.loanModel = self.loanModel;
             cell.isDetailCell = YES;
             return cell;
         }else
         {
-            HomeUserLoanInforCell *cell = [HomeUserLoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
             cell.userLoanModel = self.userLoanModel;
             cell.isDetailCell = YES;
             return cell;
@@ -92,7 +146,9 @@
         UIImage *image = [UIImage imageNamed: _loanStatusImageList[indexPath.row]];
         [cell.imageView setImage: image];
         [cell.textLabel setText: _loanStatusListArr[indexPath.row]];
+        
         [cell.detailTextLabel setText: self.statusArr[indexPath.row]];
+
         return cell;
     }
     
@@ -132,12 +188,12 @@
         if (!headerView) {
             headerView = [[LoanTitleHeaderView alloc] initWithReuseIdentifier: titleHeaderViewID];
         }
-        if (self.loanModel != nil) {
+        if (self.isLoanSection) {
             headerView.title = self.loanModel.title;
             headerView.loansn = self.loanModel.loansn;
         }else if (self.userLoanModel != nil){
             headerView.title = self.userLoanModel.title;
-            headerView.title = self.userLoanModel.loansn;
+            headerView.loansn = self.userLoanModel.loansn;
         }
         return headerView;
         
@@ -162,25 +218,33 @@
 
 -(NSMutableArray *)statusArr
 {
-    if (!_statusArr) {
-        NSString *startTime = self.loanModel == nil ? self.userLoanModel.starttime : self.loanModel.lssuingtime;
-        long ratio = self.loanModel == nil ? self.userLoanModel.ratio : self.loanModel.ratio;
-        NSString *currentStatus;
-        if (ratio == 100) {
-            currentStatus = @"已完成";
-        }else {
-            currentStatus = [NSString stringWithFormat: @"%ld%%", ratio];
-        }
-        NSString *invitedMoney = self.loanModel == nil ? self.userLoanModel.loanmoney : self.loanModel.loanmoney;
+//    if (self.loanModel != nil || self.userLoanModel != nil) {
+    NSString *tmpStartTime = self.isLoanSection ?  self.loanModel.lssuingtime : self.userLoanModel.starttime;
+    NSString *startTime = tmpStartTime != nil ? tmpStartTime : @" ";
+    
+    long tmpRatio = self.isLoanSection ? self.loanModel.ratio : self.userLoanModel.ratio;
+    long ratio = tmpRatio != 0 ? tmpRatio : 0;
+    
+    NSString *currentStatus;
+    if (ratio == 100) {
+        currentStatus = @"已完成";
+    }else if (ratio == 0){
+        currentStatus = @"0";
+    }else {
+        currentStatus = [NSString stringWithFormat: @"%ld%%", ratio];
+    }
+    NSString *tmpMoney = self.isLoanSection ? self.loanModel.loanmoney : self.userLoanModel.loanmoney;
+    NSString *invitedMoney = tmpMoney != nil ? tmpMoney : @"0.00";
 //        long userLoanB = self.userLoanModel.tendermoney.integerValue - self.userLoanModel.loanmoney.integerValue;
 //        long loanB = self.loanModel.tendermoney.integerValue - self.loanModel.loanmoney.integerValue;
 //        NSString *balance = [NSString stringWithFormat: @"%ld", self.loanModel == nil ? userLoanB : loanB];
-        NSString *balance = @"0.00元";
-        NSString *lowestMoney = @"0.00元";
-        NSString *profile = [NSString stringWithFormat: @"%@元", self.userLoanModel.overflow_money];
-        _statusArr = [NSMutableArray arrayWithObjects: startTime, currentStatus, invitedMoney, balance, lowestMoney, profile, nil];
-    }
+    NSString *balance = @"0.00元";
+    NSString *lowestMoney = @"0.00元";
+    NSString *profile = [NSString stringWithFormat: @"%@元", self.userLoanModel.overflow_money];
+    _statusArr = [NSMutableArray arrayWithObjects: startTime, currentStatus, invitedMoney, balance, lowestMoney, profile, nil];
+//    }
     return _statusArr;
 }
 
 @end
+

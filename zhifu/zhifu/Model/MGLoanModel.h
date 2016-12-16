@@ -60,13 +60,15 @@
 
 @property(nonatomic, copy)   NSString     *loan_type;
 
-@property(nonatomic, assign) NSInteger    *flag;
+@property(nonatomic, assign) NSInteger    flag;
 
 @property(nonatomic, copy)   NSString     *cate_logo;
 
 @property(nonatomic, assign) NSInteger     ratio;
 
 @property(nonatomic, copy)   NSString     *msg;
+
+
 
 
 -(instancetype)initWithDict:(NSDictionary *)dict;

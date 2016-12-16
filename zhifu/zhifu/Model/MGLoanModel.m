@@ -25,18 +25,11 @@
     return [[self alloc] initWithDict: dict];
 }
 
-//-(void)setValue:(id)value forKey:(NSString *)key
-//{
-//    if ([key isEqualToString: @"id"])
-//    {
-//        self.ID = value;
-//    }
-//}
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     
-    //NSLog(@"LoanModel undefinekey: %@", key);
+    NSLog(@"LoanModel undefinekey: %@", key);
     if ([key isEqualToString: @"id"])
     {
         self.ID = value;

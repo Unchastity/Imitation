@@ -14,11 +14,6 @@
 
 @property (nonatomic, strong) MGUserLoanModel *userLoanModel;
 
-//-(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel;
-//
-//-(void)setLoanModel:(MGLoanModel *)loanModel;
-//
-
 -(void)setLoanModel:(MGLoanModel *)loanModel;
 -(void)setUserLoanModel:(MGUserLoanModel *)userLoanModel;
 @end

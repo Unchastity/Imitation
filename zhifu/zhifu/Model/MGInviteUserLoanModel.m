@@ -1,19 +1,20 @@
 //
-//  MGInviteLoanModel.m
+//  MGInviteUserLoanModel.m
 //  zhifu
 //
-//  Created by Unchastity on 12/13/16.
+//  Created by Unchastity on 12/16/16.
 //  Copyright © 2016 Unchastity. All rights reserved.
 //
 
-#import "MGInviteLoanModel.h"
+#import "MGInviteUserLoanModel.h"
 
-@implementation MGInviteLoanModel
+@implementation MGInviteUserLoanModel
 
 -(instancetype)initWithDict:(NSDictionary *)dict
 {
     self = [super init];
     if (self) {
+        
         [self setValuesForKeysWithDictionary: dict];
     }
     return self;
@@ -26,9 +27,10 @@
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    
+    NSLog(@"MGInviteUserLoanModel undefine key= %@", key);
     if ([key isEqualToString: @"id"]) {
         self.ID = value;
     }
 }
+
 @end

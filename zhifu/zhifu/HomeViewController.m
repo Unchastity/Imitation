@@ -78,7 +78,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-        
+        //使用storyboar时在interface中设置，但颜色会被渲染，需设置UIImageRenderingModeAlwaysOriginal
     [self.tabBarItem setTitle: @"首页"];
     [self.tabBarItem setImage: [[UIImage imageNamed: @"tab_home"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
     [self.tabBarItem setSelectedImage: [[UIImage imageNamed: @"tab_homehover"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
@@ -205,8 +205,9 @@
             
             [_networkActivityView stopAnimating];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
-            
-            [self.homeTableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.homeTableView reloadData];
+            });
             dispatch_async(dispatch_get_main_queue(), ^{
                 [UIView animateWithDuration: 2.0 animations:^{
                     self.homeTableView.transform = CGAffineTransformIdentity;
@@ -267,7 +268,7 @@
     }else if (indexPath.section == 1)
     {
         static NSString *loanCellID = @"loanCellID";
-        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
+        LoanInforCell *cell = [HomeLoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
         if (self.dataResultModel.newloan != nil && indexPath.row == 0) {
             [cell setLoanModel: self.loanNewModel];
         }else
@@ -308,15 +309,18 @@
     {
         NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
         MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
-        if (self.loanNewModel != nil) {
+        if (self.loanNewModel != nil)
+        {
             if (indexPath.row == 0) {
-                detailVC.loanModel = self.loanNewModel;
+                detailVC.loanSN = self.loanNewModel.loansn;
             }else {
-                detailVC.loanModel = self.goingLoansArr[indexPath.row - 1];
+                MGLoanModel *tmpLoanModel = self.goingLoansArr[indexPath.row - 1];
+                detailVC.loanSN = tmpLoanModel.loansn;
             }
         }else
         {
-            detailVC.loanModel = self.goingLoansArr[indexPath.row];
+            MGLoanModel *tmpLoanModel = self.goingLoansArr[indexPath.row];
+            detailVC.loanSN = tmpLoanModel.loansn;
         }
         detailVC.isLoanSection = YES;
         [self.navigationController pushViewController: detailVC animated:YES];
@@ -324,7 +328,9 @@
     {
         NSLog(@"select section= %ld, row= %ld",(long)indexPath.section, (long)indexPath.row);
         MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
-        detailVC.userLoanModel = self.userLoansArr[indexPath.row];
+        MGUserLoanModel *tmpUserLoanModel = self.userLoansArr[indexPath.row];
+        detailVC.loanSN = tmpUserLoanModel.loansn;
+        detailVC.user_loanSN = tmpUserLoanModel.user_loansn;
         detailVC.isLoanSection = NO;
         [self.navigationController pushViewController: detailVC animated:YES];
     }

@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class MGLoanModel, MGUserLoanModel;
 
 @interface MGDetailTableViewController : UITableViewController
 
 @property (nonatomic, assign) BOOL isLoanSection;
 
-@property (nonatomic, strong) MGLoanModel       *loanModel;
-@property (nonatomic, strong) MGUserLoanModel   *userLoanModel;
-
+@property (nonatomic, copy)   NSString *loanSN;
+@property (nonatomic, copy)   NSString *user_loanSN;
 
 +(instancetype)viewControllerFromStoryboard;
 

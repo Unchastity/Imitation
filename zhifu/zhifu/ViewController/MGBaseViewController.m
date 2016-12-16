@@ -26,7 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    // 设置tabBarItem 字体颜色
+    [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} forState: UIControlStateSelected];
+    //设置navigation 背景
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"NavBackImg"] forBarMetrics:UIBarMetricsDefault];
 }
 

@@ -41,6 +41,8 @@
 		012557551DFA4A7F00B41771 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557541DFA4A7F00B41771 /* CustomButton.m */; };
 		012557581DFA578B00B41771 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557571DFA578B00B41771 /* MGAlertController.m */; };
 		0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */; };
+		0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */; };
+		0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */; };
 		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
 		01A2CB821DFC3EE30045D06D /* MGDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB811DFC3EE30045D06D /* MGDetailTableViewController.m */; };
 		01A2CB871DFC43250045D06D /* LoanTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB861DFC43250045D06D /* LoanTitleHeaderView.m */; };
@@ -50,6 +52,8 @@
 		01A2CB9B1DFFA1650045D06D /* HomeLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */; };
 		01A2CB9E1DFFA3F40045D06D /* HomeUserLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */; };
 		01A2CBA11DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */; };
+		01A2CBA71DFFD63A0045D06D /* MGDetailLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CBA61DFFD63A0045D06D /* MGDetailLoanModel.m */; };
+		01A2CBAA1DFFD6540045D06D /* MGDetailUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CBA91DFFD6540045D06D /* MGDetailUserLoanModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		012557571DFA578B00B41771 /* MGAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAlertController.m; sourceTree = "<group>"; };
 		0125575A1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+CreateAlertControllerQuickly.h"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.h"; sourceTree = "<group>"; };
 		0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+CreateAlertControllerQuickly.m"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.m"; sourceTree = "<group>"; };
+		0145CB561E03CF2D000899BE /* MGInviteUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGInviteUserLoanModel.h; path = Model/MGInviteUserLoanModel.h; sourceTree = "<group>"; };
+		0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGInviteUserLoanModel.m; path = Model/MGInviteUserLoanModel.m; sourceTree = "<group>"; };
+		0145CB591E03DCAC000899BE /* LoanInforCell+InviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+InviteCell.h"; path = "View/Cell/LoanInforCell+InviteCell.h"; sourceTree = "<group>"; };
+		0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoanInforCell+InviteCell.m"; path = "View/Cell/LoanInforCell+InviteCell.m"; sourceTree = "<group>"; };
 		01A2CB7A1DFAF29D0045D06D /* MGFogetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFogetPWViewController.h; sourceTree = "<group>"; };
 		01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFogetPWViewController.m; sourceTree = "<group>"; };
 		01A2CB801DFC3EE30045D06D /* MGDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGDetailTableViewController.h; path = ViewController/MGDetailTableViewController.h; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 		01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeUserLoanInforCell.m; path = View/Cell/HomeUserLoanInforCell.m; sourceTree = "<group>"; };
 		01A2CB9F1DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+HomeLoanInforCell.h"; path = "View/Cell/LoanInforCell+HomeLoanInforCell.h"; sourceTree = "<group>"; };
 		01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LoanInforCell+HomeLoanInforCell.m"; path = "View/Cell/LoanInforCell+HomeLoanInforCell.m"; sourceTree = "<group>"; };
+		01A2CBA51DFFD63A0045D06D /* MGDetailLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGDetailLoanModel.h; path = Model/MGDetailLoanModel.h; sourceTree = "<group>"; };
+		01A2CBA61DFFD63A0045D06D /* MGDetailLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGDetailLoanModel.m; path = Model/MGDetailLoanModel.m; sourceTree = "<group>"; };
+		01A2CBA81DFFD6540045D06D /* MGDetailUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGDetailUserLoanModel.h; sourceTree = "<group>"; };
+		01A2CBA91DFFD6540045D06D /* MGDetailUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGDetailUserLoanModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,16 +287,8 @@
 		010F79501DF68FBE0001793B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				010F795A1DF6BBBF0001793B /* MGDataResultModel.h */,
-				010F795B1DF6BBBF0001793B /* MGDataResultModel.m */,
-				010F795D1DF6C37C0001793B /* MGBannersModel.h */,
-				010F795E1DF6C37C0001793B /* MGBannersModel.m */,
-				010F79601DF6F8990001793B /* MGLoanModel.h */,
-				010F79611DF6F89A0001793B /* MGLoanModel.m */,
-				010F79631DF6FB840001793B /* MGUserLoanModel.h */,
-				010F79641DF6FB840001793B /* MGUserLoanModel.m */,
-				01A2CB921DFF9E2B0045D06D /* MGInviteLoanModel.h */,
-				01A2CB931DFF9E2B0045D06D /* MGInviteLoanModel.m */,
+				0145CB5D1E03F046000899BE /* Home */,
+				0145CB5C1E03F026000899BE /* Invite */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -317,10 +321,9 @@
 				012557341DF84B7100B41771 /* LoanInforCell.xib */,
 				01A2CB9F1DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.h */,
 				01A2CBA01DFFBDAF0045D06D /* LoanInforCell+HomeLoanInforCell.m */,
-				01A2CB991DFFA1650045D06D /* HomeLoanInforCell.h */,
-				01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */,
-				01A2CB9C1DFFA3F40045D06D /* HomeUserLoanInforCell.h */,
-				01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */,
+				0145CB591E03DCAC000899BE /* LoanInforCell+InviteCell.h */,
+				0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */,
+				0145CB551E039E75000899BE /* deprecate */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -411,6 +414,47 @@
 				012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */,
 			);
 			name = category;
+			sourceTree = "<group>";
+		};
+		0145CB551E039E75000899BE /* deprecate */ = {
+			isa = PBXGroup;
+			children = (
+				01A2CB991DFFA1650045D06D /* HomeLoanInforCell.h */,
+				01A2CB9A1DFFA1650045D06D /* HomeLoanInforCell.m */,
+				01A2CB9C1DFFA3F40045D06D /* HomeUserLoanInforCell.h */,
+				01A2CB9D1DFFA3F40045D06D /* HomeUserLoanInforCell.m */,
+			);
+			name = deprecate;
+			sourceTree = "<group>";
+		};
+		0145CB5C1E03F026000899BE /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				01A2CB921DFF9E2B0045D06D /* MGInviteLoanModel.h */,
+				01A2CB931DFF9E2B0045D06D /* MGInviteLoanModel.m */,
+				0145CB561E03CF2D000899BE /* MGInviteUserLoanModel.h */,
+				0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */,
+			);
+			name = Invite;
+			sourceTree = "<group>";
+		};
+		0145CB5D1E03F046000899BE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				010F795A1DF6BBBF0001793B /* MGDataResultModel.h */,
+				010F795B1DF6BBBF0001793B /* MGDataResultModel.m */,
+				010F795D1DF6C37C0001793B /* MGBannersModel.h */,
+				010F795E1DF6C37C0001793B /* MGBannersModel.m */,
+				010F79601DF6F8990001793B /* MGLoanModel.h */,
+				010F79611DF6F89A0001793B /* MGLoanModel.m */,
+				01A2CBA51DFFD63A0045D06D /* MGDetailLoanModel.h */,
+				01A2CBA61DFFD63A0045D06D /* MGDetailLoanModel.m */,
+				010F79631DF6FB840001793B /* MGUserLoanModel.h */,
+				010F79641DF6FB840001793B /* MGUserLoanModel.m */,
+				01A2CBA81DFFD6540045D06D /* MGDetailUserLoanModel.h */,
+				01A2CBA91DFFD6540045D06D /* MGDetailUserLoanModel.m */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		01A2CB841DFC42CA0045D06D /* MGLoanDetail */ = {
@@ -585,12 +629,15 @@
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
 				01A2CB971DFFA0AD0045D06D /* InviteLoanInforCell.m in Sources */,
 				010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */,
+				0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */,
 				01A2CB911DFEA6000045D06D /* LoanStatusCell.m in Sources */,
 				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
 				01A2CB9E1DFFA3F40045D06D /* HomeUserLoanInforCell.m in Sources */,
+				0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */,
 				012557581DFA578B00B41771 /* MGAlertController.m in Sources */,
 				010F795F1DF6C37C0001793B /* MGBannersModel.m in Sources */,
 				010F79161DF564460001793B /* AppDelegate.m in Sources */,
+				01A2CBAA1DFFD6540045D06D /* MGDetailUserLoanModel.m in Sources */,
 				010F79191DF564460001793B /* HomeViewController.m in Sources */,
 				010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */,
 				01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */,
@@ -601,6 +648,7 @@
 				010F79131DF564460001793B /* main.m in Sources */,
 				010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */,
 				012557351DF84B7100B41771 /* LoanInforCell.m in Sources */,
+				01A2CBA71DFFD63A0045D06D /* MGDetailLoanModel.m in Sources */,
 				010F79681DF70E180001793B /* MGBaseViewController.m in Sources */,
 				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
 				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,

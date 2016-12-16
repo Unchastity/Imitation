@@ -27,6 +27,7 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     NSLog(@"UserLoanModel undefined key = %@", key);
+    
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @interface MGInviteLoanModel : NSObject
 
-@property(nonatomic, copy)   NSString     *id;          //"id": "11788",
+@property(nonatomic, copy)   NSString     *ID;          //"id": "11788",
 
 @property(nonatomic, copy)   NSString     *loansn;      //"loansn": "11480664718116",
 
@@ -45,9 +45,9 @@
 
 @property(nonatomic, copy)   NSString     *loan_type;       //"loan_type": "normal",
 
-@property(nonatomic, assign) NSInteger    *flag;            //"flag": 1,
+@property(nonatomic, assign) long         flag;            //"flag": 1,
 
-@property(nonatomic, assign) NSInteger    *ratio;           //"ratio": 100,
+@property(nonatomic, assign) long         ratio;           //"ratio": 100,
 
 @property(nonatomic, copy)   NSString     *path;            //"path": null,
 
@@ -57,6 +57,7 @@
 
 
 -(instancetype)initWithDict:(NSDictionary *)dict;
+
 +(instancetype)modelWithDict:(NSDictionary *)dict;
 
 @end
