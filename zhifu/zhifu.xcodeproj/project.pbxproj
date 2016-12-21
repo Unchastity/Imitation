@@ -47,7 +47,6 @@
 		0143DBF51E0A80FF00F829F9 /* NewsBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF41E0A80FF00F829F9 /* NewsBulletinViewController.m */; };
 		0143DBF81E0A815500F829F9 /* FastLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF71E0A815500F829F9 /* FastLoanViewController.m */; };
 		0143DBFB1E0A818300F829F9 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */; };
-		0143DBFE1E0A823900F829F9 /* MGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBFD1E0A823900F829F9 /* MGWebViewController.m */; };
 		0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */; };
 		0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */; };
 		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
@@ -158,8 +157,6 @@
 		0143DBF71E0A815500F829F9 /* FastLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastLoanViewController.m; path = ViewController/MoreTabBar/FastLoanViewController.m; sourceTree = "<group>"; };
 		0143DBF91E0A818300F829F9 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalculatorViewController.h; path = ViewController/MoreTabBar/CalculatorViewController.h; sourceTree = "<group>"; };
 		0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalculatorViewController.m; path = ViewController/MoreTabBar/CalculatorViewController.m; sourceTree = "<group>"; };
-		0143DBFC1E0A823900F829F9 /* MGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWebViewController.h; sourceTree = "<group>"; };
-		0143DBFD1E0A823900F829F9 /* MGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWebViewController.m; sourceTree = "<group>"; };
 		0145CB561E03CF2D000899BE /* MGInviteUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGInviteUserLoanModel.h; path = Model/MGInviteUserLoanModel.h; sourceTree = "<group>"; };
 		0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGInviteUserLoanModel.m; path = Model/MGInviteUserLoanModel.m; sourceTree = "<group>"; };
 		0145CB591E03DCAC000899BE /* LoanInforCell+InviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+InviteCell.h"; path = "View/Cell/LoanInforCell+InviteCell.h"; sourceTree = "<group>"; };
@@ -430,8 +427,6 @@
 				010F79671DF70E180001793B /* MGBaseViewController.m */,
 				0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */,
 				0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */,
-				0143DBFC1E0A823900F829F9 /* MGWebViewController.h */,
-				0143DBFD1E0A823900F829F9 /* MGWebViewController.m */,
 				012557561DFA578B00B41771 /* MGAlertController.h */,
 				012557571DFA578B00B41771 /* MGAlertController.m */,
 			);
@@ -667,7 +662,6 @@
 				0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */,
 				01A2CB911DFEA6000045D06D /* LoanStatusCell.m in Sources */,
 				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
-				0143DBFE1E0A823900F829F9 /* MGWebViewController.m in Sources */,
 				01A2CB9E1DFFA3F40045D06D /* HomeUserLoanInforCell.m in Sources */,
 				0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */,
 				012557581DFA578B00B41771 /* MGAlertController.m in Sources */,
