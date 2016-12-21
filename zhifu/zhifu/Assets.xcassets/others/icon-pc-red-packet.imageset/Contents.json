@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon-pc-red-packet.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icon-pc-red-packet.png",
       "scale" : "2x"
     },
     {

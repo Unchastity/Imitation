@@ -12,22 +12,28 @@
 #import "MGInviteLoanModel.h"
 #import "MGInviteUserLoanModel.h"
 
+#import "MGDetailTableViewController.h"
 #import "LoanInforCell+InviteCell.h"
 
 
 typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error);
 
-@interface InvestViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface InvestViewController ()<UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 {
     UIButton *_selectedFstBtn;
     UIButton *_selectedSndBtn;
-    UIView   *_shadowView;
+    
+//    UIView   *_shadowView;
     
     NSMutableArray *_loanArr;
+    
     NSArray *_cateIDArr;
     NSArray *_yearRateArr;
     NSArray *_loanMonthArr;
+    NSArray *_taskViewArr;
     
+    long _pageNum;   //默认为20
+    long _totalNum;
     long _pageNo;
     long _cateid;
     long _yearrate;
@@ -58,6 +64,7 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
 @property (strong, nonatomic) UITableView *taskTableView;
 
 @property (nonatomic, strong) requestBlock conditionBlock;
+//可以提前代码，传递模型参数
 @property (nonatomic, strong) requestBlock loanBlock;
 @property (nonatomic, strong) requestBlock userLoanBlock;
 
@@ -98,6 +105,8 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
                         MGInviteUserLoanModel *userLoanModel = [MGInviteUserLoanModel modelWithDict: modelDict];
                         [_loanArr addObject: userLoanModel];
                     }
+                    NSString *pageTotal = dataResultDict[@"page_total"];
+                    _totalNum = pageTotal.longLongValue;
                     _pageNo = pageno.longLongValue;
                 }
             }else {
@@ -134,6 +143,8 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
                         MGInviteLoanModel *loanModel = [MGInviteLoanModel modelWithDict: modelDict];
                         [_loanArr addObject: loanModel];
                     }
+                    NSString *pageTotal = dataResultDict[@"page_total"];
+                    _totalNum = pageTotal.longLongValue;
                     _pageNo = pageno.longLongValue;
                 }
             }else
@@ -183,10 +194,10 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
     CGFloat shadowW = self.view.bounds.size.width;
     CGFloat shadowH = self.view.bounds.size.height - shadowY - self.tabBarController.tabBar.frame.size.height;
     CGRect  shadowFrame = CGRectMake(shadowX, shadowY, shadowW, shadowH);
-    _shadowView.frame = shadowFrame;
+    //_shadowView.frame = shadowFrame;
     
-    CGRect taskFrame = CGRectMake(0, 0, CGRectGetWidth(_shadowView.frame), CGRectGetHeight(_shadowView.frame));
-    self.taskTableView.frame = taskFrame;
+    //CGRect taskFrame = CGRectMake(0, 0, CGRectGetWidth(_shadowView.frame), CGRectGetHeight(_shadowView.frame));
+    self.taskTableView.frame = shadowFrame;
 }
 
 -(void)settingNavigationBar
@@ -211,6 +222,7 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
     _cateIDArr    = [NSArray new];
     _yearRateArr  = [NSArray new];
     _loanMonthArr = [NSArray new];
+    _taskViewArr  = [NSArray new];
     
     //default setting
     _selectedFstBtn = self.inviteListBtn;
@@ -220,27 +232,48 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
 
 -(void)initSetting
 {
-    _shadowView = [[UIView alloc] init];
-    _shadowView.backgroundColor = [UIColor blackColor];
-    _shadowView.alpha = 0.4;
-    _shadowView.hidden = YES;
-    [self.view addSubview: _shadowView];
-    UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchShadowView)];
-    [_shadowView addGestureRecognizer: ges];
+//    _shadowView = [[UIView alloc] init];
+//    //在这里需要用下边的方法设定Alpha值,第一种方法会使子视图的Alpha值和父视图的一样.
+//    //self.backgroundColor = [UIColor colorWithRed:(40/255.0f) green:(40/255.0f) blue:(40/255.0f) alpha:1.0f];
+//    _shadowView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.4];
+//    _shadowView.hidden = YES;
+//    [self.view addSubview: _shadowView];
     
-//    CGRect taskFrame = CGRectMake(0, 0, CGRectGetWidth(_shadowView.frame), CGRectGetHeight(_shadowView.frame));
-//    self.taskTableView = [[UITableView alloc] initWithFrame: taskFrame style: UITableViewStylePlain];
-//    self.taskTableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
-//    self.taskTableView.backgroundColor = [UIColor whiteColor];
-//    [_shadowView addSubview: self.taskTableView];
+    CGRect taskFrame = CGRectMake(0, 0, 0, 0);
+    self.taskTableView = [[UITableView alloc] initWithFrame: taskFrame style: UITableViewStylePlain];
+    self.taskTableView.delegate = self;
+    self.taskTableView.dataSource = self;
+    self.taskTableView.hidden = YES;
+    //使用colorWithAlphaComponent使子视图的alpha值可设
+    self.taskTableView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.4];
+    self.taskTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.taskTableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
+    [self.view addSubview: self.taskTableView];
+    
+    //点击taskTableView空白部分，隐藏
+    UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchShadowView:)];
+    ges.delegate = self;
+    [self.taskTableView addGestureRecognizer: ges];
+
 }
 
--(void)touchShadowView
+#pragma mark - UIGestureRecognizerDelegate
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    NSLog(@"click shadow view");
-    [_shadowView setHidden: YES];
-    _selectedSndBtn.selected = NO;
-    _selectedSndBtn = nil;
+    if ([touch.view isKindOfClass: [UITableView class]]) {
+        return YES;
+    }
+    return NO;
+}
+
+-(void)touchShadowView:(UITapGestureRecognizer *)sender
+{
+    if (![sender.view isKindOfClass: [UITableViewCell class]]) {
+        NSLog(@"click task Table view");
+        [self.taskTableView setHidden: YES];
+        _selectedSndBtn.selected = NO;
+        _selectedSndBtn = nil;
+    }
 }
 
 - (IBAction)selectInviteType:(UIButton *)sender
@@ -262,6 +295,7 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
     _yearrate   = 0;
     _loanmonth  = 0;
     _pageNo     = 1;
+    _pageNum    = 20;
     
     [_loanArr removeAllObjects];
     [self sendRequestWithBody: [self conditionRequestBody] requestBlock: self.conditionBlock];
@@ -279,15 +313,30 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
     if (_selectedSndBtn == sender) {
         _selectedSndBtn.selected = NO;
         _selectedSndBtn = nil;
-        [_shadowView setHidden: YES];
+        [self.taskTableView setHidden: YES];
 
     }else {
         _selectedSndBtn.selected = NO;
         _selectedSndBtn = sender;
         _selectedSndBtn.selected = YES;
-        [_shadowView setHidden: NO];
+        [self.taskTableView setHidden: NO];
+        
+        if (_selectedSndBtn == self.standardClassBtn)
+        {
+            _taskViewArr = _cateIDArr;
+        }else if (_selectedSndBtn == self.yearRateClassBtn)
+        {
+            _taskViewArr = _yearRateArr;
+        }else if(_selectedSndBtn == self.latestTimeBtn)
+        {
+            _taskViewArr = _loanMonthArr;
+        }else
+        {
+            _taskViewArr = nil;
+        }
+        
+        [self.taskTableView reloadData];
     }
-    [self.taskTableView reloadData];
 }
 
 -(void)sendRequestWithBody:(NSString *)bodyStr requestBlock:(requestBlock) block
@@ -318,24 +367,72 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"_loanArr.count= %lu", (unsigned long)_loanArr.count);
-    return _loanArr.count;
+    if (tableView == self.hostTableView)
+    {
+        NSLog(@"_loanArr.count= %lu", (unsigned long)_loanArr.count);
+        return _loanArr.count;
+
+    }else
+    {
+        NSLog(@"_taskViewArr.count = %lu", (unsigned long)_taskViewArr.count);
+        return _taskViewArr.count;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *loanCellID = @"loanCellID";
-    LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
-
-    if ([_cmdStr isEqualToString: @"loan_index"])
+    if (tableView == self.hostTableView)
     {
-        MGInviteLoanModel *loanModel = _loanArr.count != 0 ? _loanArr[indexPath.row] : nil;
-        [cell setLoanModel: loanModel];
-        return cell;
+        static NSString *loanCellID = @"loanCellID";
+        LoanInforCell *cell = [LoanInforCell cellForTableView: tableView reuseIdentifier: loanCellID];
+        
+        if ([_cmdStr isEqualToString: @"loan_index"])
+        {
+            MGInviteLoanModel *loanModel = _loanArr.count != 0 ? _loanArr[indexPath.row] : nil;
+            [cell setLoanModel: loanModel];
+            return cell;
+        }else
+        {
+            MGInviteUserLoanModel *userLoanModel = _loanArr.count != 0 ? _loanArr[indexPath.row] : nil;
+            [cell setUserLoanModel: userLoanModel];
+            return cell;
+        }
     }else
     {
-        MGInviteUserLoanModel *userLoanModel = _loanArr.count != 0 ? _loanArr[indexPath.row] : nil;
-        [cell setUserLoanModel: userLoanModel];
+        static NSString *taskCellID = @"taskCellID";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: taskCellID];
+        //[cell.imageView setImage: [UIImage imageNamed: @""]];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:taskCellID];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor blackColor];
+            cell.textLabel.textAlignment = NSTextAlignmentLeft;
+            cell.alpha = 1.0;
+        }
+        if (_taskViewArr.count > 0) {
+            cell.textLabel.text = _taskViewArr[indexPath.row];
+        }
+        if (_selectedSndBtn == self.standardClassBtn)
+        {
+            if (_cateid == indexPath.row) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//                [cell.imageView setImage: [UIImage imageNamed: @"UMS_add_friend_on"]];
+            }
+        }else if (_selectedSndBtn == self.yearRateClassBtn)
+        {
+            if (_yearrate == indexPath.row) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//                [cell.imageView setImage: [UIImage imageNamed: @"UMS_add_friend_on"]];
+            }
+        }else if(_selectedSndBtn == self.latestTimeBtn)
+        {
+            if (_loanmonth == indexPath.row) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//                [cell.imageView setImage: [UIImage imageNamed: @"UMS_add_friend_on"]];
+            }
+        }
+        
         return cell;
     }
 }
@@ -343,13 +440,73 @@ typedef void(^requestBlock)(NSData * _Nullable data, NSURLResponse * _Nullable r
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100.0;
+    if (tableView == self.hostTableView) {
+        return 100.0;
+    }else {
+        return 50.0;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (tableView == self.hostTableView) {
+        
+        MGDetailTableViewController *detailVC = [MGDetailTableViewController viewControllerFromStoryboard];
+        if (_selectedFstBtn == self.inviteListBtn) {
+            MGInviteLoanModel *loanModel = _loanArr[indexPath.row];
+            detailVC.isLoanSection = YES;
+            detailVC.loanSN = loanModel.loansn;
+        }else {
+            MGInviteUserLoanModel *userLoanModel = _loanArr[indexPath.row];
+            detailVC.isLoanSection = NO;
+            detailVC.loanSN = userLoanModel.loansn;
+            detailVC.user_loanSN = userLoanModel.user_loansn;
+        }
+        [self.navigationController pushViewController: detailVC animated: YES];
+        
+    }else {
+        NSLog(@"select taskTableView");
+        if (_selectedSndBtn == self.standardClassBtn)
+        {
+            _cateid = indexPath.row;
+        }else if (_selectedSndBtn == self.yearRateClassBtn)
+        {
+            _yearrate = indexPath.row;
+        }else if(_selectedSndBtn == self.latestTimeBtn)
+        {
+            _loanmonth = indexPath.row;
+        }
+        _pageNo = 1;
+        [_loanArr removeAllObjects];
+        if (_selectedFstBtn == self.inviteListBtn) {
+            [self sendRequestWithBody: [self detailDataRequestBody] requestBlock: self.loanBlock];
+        }else {
+            [self sendRequestWithBody: [self detailDataRequestBody] requestBlock: self.userLoanBlock];
+        }
+        _selectedSndBtn.selected = NO;
+        _selectedSndBtn = nil;
+        self.taskTableView.hidden = YES;
+    }
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat tableViewHeight = self.hostTableView.contentSize.height;
+    CGFloat tableViewOffsetY = self.hostTableView.contentOffset.y + self.hostTableView.frame.size.height;
+    NSLog(@"tableViewHeight = %f, tableViewOffsetY = %f", tableViewHeight, tableViewOffsetY);
+    if ( tableViewHeight + 100 < tableViewOffsetY ) {
+        if (_pageNo * _pageNum < _totalNum) {
+            NSLog(@"load more data");
+            ++_pageNo;
+            if (_selectedFstBtn == self.inviteListBtn) {
+                [self sendRequestWithBody: [self detailDataRequestBody] requestBlock: self.loanBlock];
+            }else {
+                [self sendRequestWithBody: [self detailDataRequestBody] requestBlock: self.userLoanBlock];
+            }
+        }else {
+            NSLog(@"all data have done");
+        }
+    }
+}
 
 @end

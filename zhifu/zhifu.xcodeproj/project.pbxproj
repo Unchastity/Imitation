@@ -27,6 +27,7 @@
 		010F79681DF70E180001793B /* MGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F79671DF70E180001793B /* MGBaseViewController.m */; };
 		010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F796C1DF70FA80001793B /* MGBannerScrollView.m */; };
 		010F79701DF7C81E0001793B /* MGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F796F1DF7C81D0001793B /* MGWebViewController.m */; };
+		011E8D181E0597EC000BB0FE /* UserCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D171E0597EC000BB0FE /* UserCustomButton.m */; };
 		0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125572B1DF7FC9600B41771 /* UserInfoCell.m */; };
 		0125572E1DF7FC9600B41771 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0125572C1DF7FC9600B41771 /* UserInfoCell.xib */; };
 		012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557301DF80AD300B41771 /* NSString+CountNumChangeFormat.m */; };
@@ -41,6 +42,12 @@
 		012557551DFA4A7F00B41771 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557541DFA4A7F00B41771 /* CustomButton.m */; };
 		012557581DFA578B00B41771 /* MGAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012557571DFA578B00B41771 /* MGAlertController.m */; };
 		0125575C1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */; };
+		0143DBF11E0A39BD00F829F9 /* CommonUseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBEF1E0A39BD00F829F9 /* CommonUseCell.m */; };
+		0143DBF21E0A39BD00F829F9 /* CommonUseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143DBF01E0A39BD00F829F9 /* CommonUseCell.xib */; };
+		0143DBF51E0A80FF00F829F9 /* NewsBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF41E0A80FF00F829F9 /* NewsBulletinViewController.m */; };
+		0143DBF81E0A815500F829F9 /* FastLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF71E0A815500F829F9 /* FastLoanViewController.m */; };
+		0143DBFB1E0A818300F829F9 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */; };
+		0143DBFE1E0A823900F829F9 /* MGWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBFD1E0A823900F829F9 /* MGWebViewController.m */; };
 		0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */; };
 		0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */; };
 		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
@@ -116,6 +123,8 @@
 		010F796C1DF70FA80001793B /* MGBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBannerScrollView.m; path = View/CustomView/MGBannerScrollView.m; sourceTree = "<group>"; };
 		010F796E1DF7C81D0001793B /* MGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGWebViewController.h; path = ViewController/MGWebViewController.h; sourceTree = "<group>"; };
 		010F796F1DF7C81D0001793B /* MGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGWebViewController.m; path = ViewController/MGWebViewController.m; sourceTree = "<group>"; };
+		011E8D161E0597EC000BB0FE /* UserCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCustomButton.h; path = Tool/UserCustomButton.h; sourceTree = "<group>"; };
+		011E8D171E0597EC000BB0FE /* UserCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCustomButton.m; path = Tool/UserCustomButton.m; sourceTree = "<group>"; };
 		0125572A1DF7FC9600B41771 /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoCell.h; path = View/Cell/UserInfoCell.h; sourceTree = "<group>"; };
 		0125572B1DF7FC9600B41771 /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoCell.m; path = View/Cell/UserInfoCell.m; sourceTree = "<group>"; };
 		0125572C1DF7FC9600B41771 /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserInfoCell.xib; path = View/Cell/UserInfoCell.xib; sourceTree = "<group>"; };
@@ -140,6 +149,17 @@
 		012557571DFA578B00B41771 /* MGAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAlertController.m; sourceTree = "<group>"; };
 		0125575A1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+CreateAlertControllerQuickly.h"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.h"; sourceTree = "<group>"; };
 		0125575B1DFA5D1200B41771 /* UIAlertController+CreateAlertControllerQuickly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+CreateAlertControllerQuickly.m"; path = "Tool/UIAlertController+CreateAlertControllerQuickly.m"; sourceTree = "<group>"; };
+		0143DBEE1E0A39BD00F829F9 /* CommonUseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonUseCell.h; path = View/MoreCell/CommonUseCell.h; sourceTree = "<group>"; };
+		0143DBEF1E0A39BD00F829F9 /* CommonUseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonUseCell.m; path = View/MoreCell/CommonUseCell.m; sourceTree = "<group>"; };
+		0143DBF01E0A39BD00F829F9 /* CommonUseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonUseCell.xib; path = View/MoreCell/CommonUseCell.xib; sourceTree = "<group>"; };
+		0143DBF31E0A80FF00F829F9 /* NewsBulletinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsBulletinViewController.h; path = ViewController/MoreTabBar/NewsBulletinViewController.h; sourceTree = "<group>"; };
+		0143DBF41E0A80FF00F829F9 /* NewsBulletinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsBulletinViewController.m; path = ViewController/MoreTabBar/NewsBulletinViewController.m; sourceTree = "<group>"; };
+		0143DBF61E0A815500F829F9 /* FastLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastLoanViewController.h; path = ViewController/MoreTabBar/FastLoanViewController.h; sourceTree = "<group>"; };
+		0143DBF71E0A815500F829F9 /* FastLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastLoanViewController.m; path = ViewController/MoreTabBar/FastLoanViewController.m; sourceTree = "<group>"; };
+		0143DBF91E0A818300F829F9 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalculatorViewController.h; path = ViewController/MoreTabBar/CalculatorViewController.h; sourceTree = "<group>"; };
+		0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalculatorViewController.m; path = ViewController/MoreTabBar/CalculatorViewController.m; sourceTree = "<group>"; };
+		0143DBFC1E0A823900F829F9 /* MGWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWebViewController.h; sourceTree = "<group>"; };
+		0143DBFD1E0A823900F829F9 /* MGWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWebViewController.m; sourceTree = "<group>"; };
 		0145CB561E03CF2D000899BE /* MGInviteUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGInviteUserLoanModel.h; path = Model/MGInviteUserLoanModel.h; sourceTree = "<group>"; };
 		0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGInviteUserLoanModel.m; path = Model/MGInviteUserLoanModel.m; sourceTree = "<group>"; };
 		0145CB591E03DCAC000899BE /* LoanInforCell+InviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+InviteCell.h"; path = "View/Cell/LoanInforCell+InviteCell.h"; sourceTree = "<group>"; };
@@ -306,6 +326,8 @@
 				012557491DF99DC900B41771 /* CreateBarBtnItem.m */,
 				012557531DFA4A7F00B41771 /* CustomButton.h */,
 				012557541DFA4A7F00B41771 /* CustomButton.m */,
+				011E8D161E0597EC000BB0FE /* UserCustomButton.h */,
+				011E8D171E0597EC000BB0FE /* UserCustomButton.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -379,6 +401,15 @@
 			children = (
 				010F794A1DF5B8110001793B /* MoreViewController.h */,
 				010F794B1DF5B8110001793B /* MoreViewController.m */,
+				0143DBF31E0A80FF00F829F9 /* NewsBulletinViewController.h */,
+				0143DBF41E0A80FF00F829F9 /* NewsBulletinViewController.m */,
+				0143DBF61E0A815500F829F9 /* FastLoanViewController.h */,
+				0143DBF71E0A815500F829F9 /* FastLoanViewController.m */,
+				0143DBF91E0A818300F829F9 /* CalculatorViewController.h */,
+				0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */,
+				0143DBEE1E0A39BD00F829F9 /* CommonUseCell.h */,
+				0143DBEF1E0A39BD00F829F9 /* CommonUseCell.m */,
+				0143DBF01E0A39BD00F829F9 /* CommonUseCell.xib */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -399,6 +430,8 @@
 				010F79671DF70E180001793B /* MGBaseViewController.m */,
 				0125574B1DF9AC1800B41771 /* MGBaseNavigationController.h */,
 				0125574C1DF9AC1800B41771 /* MGBaseNavigationController.m */,
+				0143DBFC1E0A823900F829F9 /* MGWebViewController.h */,
+				0143DBFD1E0A823900F829F9 /* MGWebViewController.m */,
 				012557561DFA578B00B41771 /* MGAlertController.h */,
 				012557571DFA578B00B41771 /* MGAlertController.m */,
 			);
@@ -595,6 +628,7 @@
 				0125572E1DF7FC9600B41771 /* UserInfoCell.xib in Resources */,
 				010F79241DF564460001793B /* LaunchScreen.storyboard in Resources */,
 				010F79211DF564460001793B /* Assets.xcassets in Resources */,
+				0143DBF21E0A39BD00F829F9 /* CommonUseCell.xib in Resources */,
 				010F791F1DF564460001793B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,10 +662,12 @@
 				01A2CB821DFC3EE30045D06D /* MGDetailTableViewController.m in Sources */,
 				010F79491DF5B8050001793B /* UserViewController.m in Sources */,
 				01A2CB971DFFA0AD0045D06D /* InviteLoanInforCell.m in Sources */,
+				0143DBF11E0A39BD00F829F9 /* CommonUseCell.m in Sources */,
 				010F79621DF6F89A0001793B /* MGLoanModel.m in Sources */,
 				0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */,
 				01A2CB911DFEA6000045D06D /* LoanStatusCell.m in Sources */,
 				0125572D1DF7FC9600B41771 /* UserInfoCell.m in Sources */,
+				0143DBFE1E0A823900F829F9 /* MGWebViewController.m in Sources */,
 				01A2CB9E1DFFA3F40045D06D /* HomeUserLoanInforCell.m in Sources */,
 				0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */,
 				012557581DFA578B00B41771 /* MGAlertController.m in Sources */,
@@ -645,12 +681,15 @@
 				012557551DFA4A7F00B41771 /* CustomButton.m in Sources */,
 				010F79561DF69C0A0001793B /* GetUUID.m in Sources */,
 				012557471DF97CF700B41771 /* MGLoginViewController.m in Sources */,
+				011E8D181E0597EC000BB0FE /* UserCustomButton.m in Sources */,
 				010F79131DF564460001793B /* main.m in Sources */,
 				010F796D1DF70FA80001793B /* MGBannerScrollView.m in Sources */,
 				012557351DF84B7100B41771 /* LoanInforCell.m in Sources */,
 				01A2CBA71DFFD63A0045D06D /* MGDetailLoanModel.m in Sources */,
 				010F79681DF70E180001793B /* MGBaseViewController.m in Sources */,
+				0143DBF81E0A815500F829F9 /* FastLoanViewController.m in Sources */,
 				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
+				0143DBF51E0A80FF00F829F9 /* NewsBulletinViewController.m in Sources */,
 				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,
 				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
 				01A2CB871DFC43250045D06D /* LoanTitleHeaderView.m in Sources */,
@@ -658,6 +697,7 @@
 				0125574A1DF99DC900B41771 /* CreateBarBtnItem.m in Sources */,
 				010F79591DF69D720001793B /* MGKeyChain.m in Sources */,
 				01A2CB9B1DFFA1650045D06D /* HomeLoanInforCell.m in Sources */,
+				0143DBFB1E0A818300F829F9 /* CalculatorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
