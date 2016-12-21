@@ -47,6 +47,7 @@
 		0143DBF51E0A80FF00F829F9 /* NewsBulletinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF41E0A80FF00F829F9 /* NewsBulletinViewController.m */; };
 		0143DBF81E0A815500F829F9 /* FastLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBF71E0A815500F829F9 /* FastLoanViewController.m */; };
 		0143DBFB1E0A818300F829F9 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */; };
+		0143DC041E0A87DD00F829F9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143DC031E0A87DD00F829F9 /* WebViewController.m */; };
 		0145CB581E03CF2D000899BE /* MGInviteUserLoanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */; };
 		0145CB5B1E03DCAC000899BE /* LoanInforCell+InviteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145CB5A1E03DCAC000899BE /* LoanInforCell+InviteCell.m */; };
 		01A2CB7C1DFAF29D0045D06D /* MGFogetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2CB7B1DFAF29D0045D06D /* MGFogetPWViewController.m */; };
@@ -157,6 +158,8 @@
 		0143DBF71E0A815500F829F9 /* FastLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastLoanViewController.m; path = ViewController/MoreTabBar/FastLoanViewController.m; sourceTree = "<group>"; };
 		0143DBF91E0A818300F829F9 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalculatorViewController.h; path = ViewController/MoreTabBar/CalculatorViewController.h; sourceTree = "<group>"; };
 		0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalculatorViewController.m; path = ViewController/MoreTabBar/CalculatorViewController.m; sourceTree = "<group>"; };
+		0143DC021E0A87DD00F829F9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ViewController/MoreTabBar/WebViewController.h; sourceTree = "<group>"; };
+		0143DC031E0A87DD00F829F9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ViewController/MoreTabBar/WebViewController.m; sourceTree = "<group>"; };
 		0145CB561E03CF2D000899BE /* MGInviteUserLoanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGInviteUserLoanModel.h; path = Model/MGInviteUserLoanModel.h; sourceTree = "<group>"; };
 		0145CB571E03CF2D000899BE /* MGInviteUserLoanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGInviteUserLoanModel.m; path = Model/MGInviteUserLoanModel.m; sourceTree = "<group>"; };
 		0145CB591E03DCAC000899BE /* LoanInforCell+InviteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LoanInforCell+InviteCell.h"; path = "View/Cell/LoanInforCell+InviteCell.h"; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 				0143DBF71E0A815500F829F9 /* FastLoanViewController.m */,
 				0143DBF91E0A818300F829F9 /* CalculatorViewController.h */,
 				0143DBFA1E0A818300F829F9 /* CalculatorViewController.m */,
+				0143DC021E0A87DD00F829F9 /* WebViewController.h */,
+				0143DC031E0A87DD00F829F9 /* WebViewController.m */,
 				0143DBEE1E0A39BD00F829F9 /* CommonUseCell.h */,
 				0143DBEF1E0A39BD00F829F9 /* CommonUseCell.m */,
 				0143DBF01E0A39BD00F829F9 /* CommonUseCell.xib */,
@@ -684,6 +689,7 @@
 				0143DBF81E0A815500F829F9 /* FastLoanViewController.m in Sources */,
 				010F795C1DF6BBBF0001793B /* MGDataResultModel.m in Sources */,
 				0143DBF51E0A80FF00F829F9 /* NewsBulletinViewController.m in Sources */,
+				0143DC041E0A87DD00F829F9 /* WebViewController.m in Sources */,
 				012557431DF92F1B00B41771 /* MGRegisterViewController.m in Sources */,
 				012557311DF80AD300B41771 /* NSString+CountNumChangeFormat.m in Sources */,
 				01A2CB871DFC43250045D06D /* LoanTitleHeaderView.m in Sources */,

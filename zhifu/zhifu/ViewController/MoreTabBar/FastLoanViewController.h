@@ -10,4 +10,6 @@
 
 @interface FastLoanViewController : MGBaseViewController
 
++(instancetype)viewControllerFromMainBoard;
+
 @end

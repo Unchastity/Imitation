@@ -1,5 +1,5 @@
 //
-//  CalculatorViewController.h
+//  WebViewController.h
 //  zhifu
 //
 //  Created by Unchastity on 12/21/16.
@@ -8,8 +8,6 @@
 
 #import "MGBaseViewController.h"
 
-@interface CalculatorViewController : MGBaseViewController
-
-+(instancetype)viewControllerFromMainBoard;
+@interface WebViewController : MGBaseViewController
 
 @end

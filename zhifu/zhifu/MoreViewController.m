@@ -9,6 +9,9 @@
 #import "MoreViewController.h"
 #import "CommonUseCell.h"
 
+#import "NewsBulletinViewController.h"
+#import "FastLoanViewController.h"
+#import "CalculatorViewController.h"
 /*
  tableView的wrapperView的height小于tableView，
  在navigationController下，tableview的y值为0，tableView的第一个cell才能置顶
@@ -159,7 +162,29 @@
 -(void)clickCommonUseBtnWithTag:(long)tag
 {
     NSLog(@"click Common Use Btn With Tag=%ld", tag);
-    
+    switch (tag) {
+        case 120:
+        {
+            NewsBulletinViewController *newsVC = [NewsBulletinViewController viewControllerFromMainStoryBoard];
+            
+            [self.navigationController pushViewController: newsVC animated: YES];
+        }
+            break;
+        case 121:
+        {
+            FastLoanViewController *fastLoanVC = [FastLoanViewController viewControllerFromMainBoard];
+            [self.navigationController pushViewController: fastLoanVC animated: YES];
+        }
+            break;
+        case 122:
+        {
+            CalculatorViewController *calculatorVC = [CalculatorViewController viewControllerFromMainBoard];
+            [self.navigationController pushViewController: calculatorVC animated: YES];
+        }
+            break;
+        default:
+            break;
+    }
     
 }
 
